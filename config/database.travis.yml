@@ -1,0 +1,4 @@
+test:
+  adapter: postgresql
+  database: startclt_test
+  username: postgres

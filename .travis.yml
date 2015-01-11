@@ -1,0 +1,19 @@
+language: ruby
+rvm:
+  - "2.1.2"
+cache: bundler
+before_script:
+- cp config/database.travis.yml config/database.yml
+- psql -c 'create database startclt_test;' -U postgres
+- bundle exec rake db:migrate
+after_success:
+- curl -o bender https://your-key-location.com/
+- chmod 600 bender
+- ssh-add bender
+- bundle exec cap production deploy
+env:
+  - CODECLIMATE_REPO_TOKEN=TOKEN
+notifications:
+  hipchat:
+    rooms:
+      secure: TOKEN
