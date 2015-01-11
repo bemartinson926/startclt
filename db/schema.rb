@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150111155139) do
+ActiveRecord::Schema.define(version: 20150111160155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20150111155139) do
   create_table "groups", force: true do |t|
     t.string   "name",        null: false
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "memberships", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "group_id",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -64,5 +71,8 @@ ActiveRecord::Schema.define(version: 20150111155139) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
+
+  add_foreign_key "memberships", "groups", name: "memberships_group_id_fk"
+  add_foreign_key "memberships", "users", name: "memberships_user_id_fk"
 
 end
