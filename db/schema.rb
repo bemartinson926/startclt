@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150111160801) do
+ActiveRecord::Schema.define(version: 20150111162151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: true do |t|
+    t.integer  "group_id",    null: false
+    t.string   "name"
+    t.text     "description"
+    t.string   "location"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "groups", force: true do |t|
     t.string   "name",        null: false
@@ -78,6 +89,8 @@ ActiveRecord::Schema.define(version: 20150111160801) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
+
+  add_foreign_key "events", "groups", name: "events_group_id_fk"
 
   add_foreign_key "membership_roles", "memberships", name: "membership_roles_membership_id_fk"
 
