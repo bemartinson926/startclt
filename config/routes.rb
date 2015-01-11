@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   root to: 'welcome#home'
   get 'welcome/home'
+  get '/about' => 'welcome#about'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
