@@ -28,9 +28,9 @@ describe "Logging in", :type => :feature do
   #   expect(page).to have_content user.email
   # end
   
-  pending "shows me my email in the navigation when I use the slick as_user trick" do
-    as_user(user) do
-      expect(page).to have_content user.email
-    end
-  end
+  # pending "shows me my email in the navigation when I use the slick as_user trick" do
+  #   as_user(user) do
+  #     expect(page).to have_content user.email
+  #   end
+  # end
 end
