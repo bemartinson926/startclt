@@ -63,6 +63,8 @@ group :test do
   gem "launchy"
   gem "database_cleaner"
   gem "codeclimate-test-reporter", require: nil
+  gem "faker"
+  gem 'shoulda-matchers', require: false
 end
 
 gem "pg"
