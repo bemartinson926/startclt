@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe User, :type => :model do
-  context "validation" do
-    subject { build(:user) }
+  context "has a valid factory" do
+    subject { FactoryGirl.build(:user) }
     it { is_expected.to be_valid }
   end
 
   context "invalid user" do
-    subject { build(:user, email: nil) }
+    subject { FactoryGirl.build(:user, email: nil) }
     it { is_expected.to be_invalid }
   end
 
