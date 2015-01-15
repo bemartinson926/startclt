@@ -6,7 +6,7 @@ RSpec.describe Event, :type => :model do
     it { is_expected.to be_valid }
   end
 
-  context "invalid user" do
+  context "invalid event" do
     subject { FactoryGirl.build(:event, name: nil) }
     it { is_expected.to be_invalid }
   end
