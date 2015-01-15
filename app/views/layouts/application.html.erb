@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
-    <title><%= content_for(:title) || "Jumbotron Template for Bootstrap" %></title>
+    <title><%= content_for(:title) || "CodePilots | StartCharlotte" %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -53,14 +53,14 @@
           <% if current_user.nil? %>
             <%= form_for(:user, :as => :user, :url => session_path("user"), html: {class: "navbar-form navbar-right"}) do |f| %>
               <div class="form-group">
-                <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>
+                <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "email" %>
               </div>
               <div class="form-group">
-                <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+                <%= f.password_field :password, class: "form-control", placeholder: "password" %>
               </div>
-              <button type="submit" class="btn btn-success">Sign in</button>
+              <button type="submit" class="btn btn-success">Sign In</button>
               <%= link_to new_user_registration_path do %>
-                  <button type="submit" class="btn btn-primary">Sign up</button>
+                  <button type="submit" class="btn btn-primary">Sign Up</button>
               <% end %>
             <% end %>
           <% end %>
@@ -76,13 +76,10 @@
    </div>
 
     <%= yield %>
-      <hr>
+    
+    <hr>
 
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
     </div> <!-- /container -->
-
   </body>
 </html>
 
