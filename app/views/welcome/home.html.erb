@@ -114,7 +114,9 @@
           <div class="panel-body text-center">
             Additional text can go here if needed...or delete this area.         
             <hr>
-              <button class="btn btn-lg btn-default btn-block">Sign Up</button> 
+              <%= link_to new_user_registration_path do %>
+                <button type="submit" class="btn btn-lg btn-default btn-block">Sign Up Now</button>
+              <% end %>
           </div>
         </div>
       </div>
