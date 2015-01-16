@@ -24,3 +24,46 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<div class="outer-page">
+      
+       <!-- Login page -->
+       <div class="login-page">
+
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs nav-justified">
+            <li class="active"><a href="#login" data-toggle="tab" class="br-lblue"><i class="fa fa-sign-in"></i> Sign In</a></li>
+            <li><a href="#register" data-toggle="tab" class="br-lblue"><i class="fa fa-pencil"></i> Sign Up</a></li>
+            <li><a href="#contact" data-toggle="tab" class="br-lblue"><i class="fa fa-envelope"></i> Mail Us</a></li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane fade active in" id="login">
+            
+            <!-- Login form -->
+            
+            <form role="form" action="index.html">
+              <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" id="email" placeholder="Email">
+              </div>
+              <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Password">
+              </div>
+              <div class="checkbox">
+              <label>
+                <input type="checkbox"> Remember Me Next Time
+              </label>
+              </div>
+              <button type="submit" class="btn btn-info btn-sm">Submit</button>
+              <button type="reset" class="btn btn-default btn-sm">Reset</button>
+            </form>
+            
+            </div>
+          </div>
+
+        </div>
+
+</div>

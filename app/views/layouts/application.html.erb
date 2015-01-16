@@ -12,16 +12,17 @@
   <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class="outer">
+    
 
     <% if current_page?(root_path) || current_page?(about_path) || current_page?(new_user_registration_path) || current_page?(new_user_session_path) %>
       <%= yield %>
     <% else %>
+      <div class="outer">
       <%= render 'layouts/sidenav' %>
-      <%= render 'layouts/topnav' %>      
+      <%= render 'layouts/topnav' %>
+      </div>      
     <% end %>
 
-    </div>
   </body>
 </html>
 
