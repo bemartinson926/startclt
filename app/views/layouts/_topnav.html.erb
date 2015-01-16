@@ -160,10 +160,10 @@
 										<!-- Icon 
 										<i class="fa fa-user"></i>  -->
 										
-										<img src="img/user2.png" alt="" class="img-responsive img-circle"/>
+										<img src="<%= current_user.avatar_url %>" alt="" class="img-responsive img-circle"/>
 										
 										<!-- User name -->
-										ashokram <span class="label label-danger">5</span> 
+										<%= current_user.first_name %><span class="label label-danger">5</span> 
 										<i class="fa fa-caret-down"></i> 
 									</a>
 									<!-- Dropdown -->
