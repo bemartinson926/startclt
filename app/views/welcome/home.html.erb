@@ -1,10 +1,11 @@
 <!--header*****************************************************************-->
-
+<button type="button"><%=link_to "Sign In", new_user_session_path %></button>
+<button type="button"><%=link_to "Sign Out", destroy_user_session_path, method: :delete %></button>
 <div id="header">
   <!-- <img class="img-responsive" src="http://placehold.it/1450x550" /> -->
   <img class="img-responsive" src="http://www.startcharlotte.com/images/cropped-sclt.png" />
 </div>
-
+<button type="button"><%=link_to "Sign Up", new_user_session_path %></button>
 <div class="divider"></div>
 
 <!--main content****************************************************************-->
@@ -28,11 +29,11 @@
 <hr class="custom" />
 
 <!--**********************************************************************-->
-   
 <div class="container feature">
   <div class="row">
     <div class="col-sm-5">
       <img class="img-responsive" src="http://placehold.it/400x200" />
+
     </div>
     
     <div class="col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-1">
