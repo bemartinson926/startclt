@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :group do
+    name "TTS Grad Class Group"
+    description Faker::Lorem.paragraph
   end
 end

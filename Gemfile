@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem "bootstrap_form"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
@@ -63,6 +63,8 @@ group :test do
   gem "launchy"
   gem "database_cleaner"
   gem "codeclimate-test-reporter", require: nil
+  gem "faker"
+  gem 'shoulda-matchers', require: false
 end
 
 gem "pg"

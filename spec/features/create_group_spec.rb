@@ -1,5 +1,8 @@
 require 'rails_helper'
 
-describe "Creating a group" do
-  # visit root_path
+feature "Creating a group" do
+  scenario "successfully" do
+    
+    # visit root_path
+  end
 end

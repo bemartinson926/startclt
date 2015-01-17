@@ -1,5 +1,5 @@
 class MembershipRole < ActiveRecord::Base
-  belongs_to :memberships
+  belongs_to :membership
 
   enum role: [:member, :organizer]
 end
