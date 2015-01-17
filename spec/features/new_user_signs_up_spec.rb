@@ -13,7 +13,7 @@ describe "New user signs up", :type => :feature do
       fill_in('Password confirmation', with: new_user.password)
       click_button('Sign up')
     end
-    expect(current_path).to eq('/')
+    expect(current_path).to eq('/new_group')
     # expect(page).to have_content("Welcome! You have signed up successfully.")
   end
 end
