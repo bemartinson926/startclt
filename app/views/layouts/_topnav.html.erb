@@ -160,11 +160,13 @@
 							<!-- Icon 
 							<i class="fa fa-user"></i>  -->
 							
-							<img src='<%= current_user.avatar_url %>' alt="" class="img-responsive img-circle"/>
+							<% if current_user %>
+								<img src='<%= current_user.avatar_url %>' alt="" class="img-responsive img-circle"/>
 							
-							<!-- User name -->
-							<%= current_user.first_name %><span class="label label-danger">5</span> 
-							<i class="fa fa-caret-down"></i> 
+								<!-- User name -->
+								<%= current_user.first_name %><span class="label label-danger">5</span> 
+								<i class="fa fa-caret-down"></i> 
+							<% end %>
 						</a>
 						<!-- Dropdown -->
 						<ul class="dropdown-menu" aria-labelledby="profile">
