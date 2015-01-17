@@ -2,6 +2,11 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
+  
+  def new_group
+    @group = Group.new
+    respond_with(@group)
+  end
 
   def index
     @groups = Group.all
@@ -42,6 +47,6 @@ class GroupsController < ApplicationController
     end
 
     def group_params
-      params[:group]
+      params.require(:group).permit(:name, :description)
     end
 end
