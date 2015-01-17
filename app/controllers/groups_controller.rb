@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :edit, :update, :destroy]
+  before_action :set_group, only: [:show, :group_dashboard, :edit, :update, :destroy]
 
   respond_to :html
   
@@ -8,6 +8,10 @@ class GroupsController < ApplicationController
     respond_with(@group)
   end
 
+  def group_dashboard
+    respond_with(@group)
+  end
+  
   def index
     @groups = Group.all
     respond_with(@groups)
