@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :events
 
   get '/new_group' => 'groups#new_group', as: 'first_group'
+  get '/dashboard/:id', to: 'groups#group_dashboard', as: 'group_dashboard'
   resources :groups
 
   root to: 'welcome#home'
