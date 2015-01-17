@@ -6,7 +6,7 @@ Warden.test_mode!
 
 # Will run the given code as the user passed in
 def as_user(user=nil, &block)
-  current_user = user || Factory.create(:user)
+  current_user = user || FactoryGirl.create(:user)
   if request.present?
     sign_in(current_user)
   else
@@ -18,7 +18,7 @@ end
 
 
 def as_visitor(user=nil, &block)
-  current_user = user || Factory.stub(:user)
+  current_user = user || FactoryGirl.stub(:user)
   if request.present?
     sign_out(current_user)
   else
