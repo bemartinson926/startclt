@@ -29,6 +29,6 @@ via https:
 Run all of the tests:  
 `rspec`  
 Run a specific test:  
-`rspec spec/[directory][file]`  
-For example:
+`rspec spec/[directory]/[file]`  
+For example:  
 `rspec spec/models/group_spec.rb`  
