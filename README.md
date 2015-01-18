@@ -23,3 +23,12 @@ via https:
 
 ###Start the Server
 `bundle exec rails s`
+
+##Test Suite
+
+Run all of the tests:  
+`rspec`  
+Run a specific test:  
+`rspec spec/[directory][file]`  
+For example:
+`rspec spec/models/group_spec.rb`  
