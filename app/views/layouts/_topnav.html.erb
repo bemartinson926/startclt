@@ -164,7 +164,7 @@
 								<img src='<%= current_user.avatar_url %>' alt="" class="img-responsive img-circle"/>
 							
 								<!-- User name -->
-								<%= current_user.first_name %><span class="label label-danger">5</span> 
+								<%= "#{current_user.first_name} #{current_user.last_name}" %><span class="label label-danger">5</span> 
 								<i class="fa fa-caret-down"></i> 
 							<% end %>
 						</a>
