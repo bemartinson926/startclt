@@ -5,6 +5,14 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
   end
 
+  def user_groups
+  	@user = User.find(params[:id])
+  end
+
+  def user_events
+  	@user = User.find(params[:id])
+  end
+
   def show
   end
 

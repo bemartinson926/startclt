@@ -1,10 +1,20 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :group_dashboard, :edit, :update, :destroy]
+  before_action :set_group, only: [:show, :group_dashboard, :edit, :update, :destroy, :group_invite, :group_members, :group_events]
   before_action :authenticate_user!
 
   respond_to :html
+
+  def group_events
+    @events = @group.events
+  end
+
+  def group_members
+  end
+
+  def group_invite
+  end
   
-  def new_group
+  def first_group
     @group = Group.new
     respond_with(@group)
   end
