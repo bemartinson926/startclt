@@ -1,13 +1,56 @@
-.navbar form {
-	padding-top:9px;
+/*.navbar form { padding-top:9px; }*/
+
+.navbar {
+	background-color:#A4DBEB;
+	margin-bottom:0px;
+	padding:20px 20px 12px 0px;
 }
 
 .nav_item {
-	float: right;
+	display:inline-block;
 }
 
 #welcome {
-	float: right;
+	/*float: right;*/
+	display:inline-block;
+}
+
+#header { position:relative; }
+
+#header img {
+	height:400px;
+	width:100%;
+}
+
+.overlay {
+	width:100%;
+	position:absolute;
+	background-color:#fff;
+	opacity:0.4;
+}
+
+/*.overlay.top is optional depending on image, watch opacity for new stack order vs. negative z and/or position*/
+
+/*.overlay.top {
+	height:15%;
+	top:0px;
+}*/
+
+.overlay.lower {
+	height:20%;
+	bottom:0px;
+}
+
+.header-text {
+	font-size:50px;
+	font-weight:600;
+	color:#333;
+}
+
+.textbox {
+	position:absolute;
+	bottom:8%;
+	/*width:100%;*/
 }
 
 .container.feature {
@@ -21,17 +64,13 @@
 }
 
 .call-to-action {
-	margin-top: 6%;
-	margin-bottom: 2%;
+	margin-top:6%;
+	margin-bottom:2%;
 }
 
 .custom {
 	height:1px;
 	background-color:#999;
-}
-
-.btn {
-	border-radius:3px;
 }
 
 .feature-title {
@@ -40,4 +79,6 @@
 	margin-bottom:14px;
 	color:#444;
 }
+
+footer { margin-bottom:30px; }
 
