@@ -7,7 +7,7 @@
 			<div class="row">
 				<div class="col-md-3 col-sm-4 col-xs-6">
 					<!-- Page title -->
-					<h2><i class="fa fa-desktop lblue"></i> Dashboard</h2>
+					<h2><%= link_to "#{@group.name}", group_dashboard_path(@group) rescue "" %></h2>
 				</div>
 				
 				<div class="col-md-3 col-sm-4 col-xs-6">
@@ -164,7 +164,7 @@
 								<img src='<%= current_user.avatar_url %>' alt="" class="img-responsive img-circle"/>
 							
 								<!-- User name -->
-								<%= current_user.first_name %><span class="label label-danger">5</span> 
+								<%= "#{current_user.first_name} #{current_user.last_name}" %><span class="label label-danger">5</span> 
 								<i class="fa fa-caret-down"></i> 
 							<% end %>
 						</a>

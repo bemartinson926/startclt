@@ -33,7 +33,9 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     @group.save
-    respond_with(@group)
+    respond_with(@group) do |format|
+      format.html { redirect_to group_dashboard_path(@group) }
+    end
   end
 
   def update
