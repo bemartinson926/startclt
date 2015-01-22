@@ -13,6 +13,10 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
   end
 
+  def user_profile
+    @user = User.find(params[:id])
+  end
+
   def show
   end
 

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/dashboard/user/:id', to: 'users#user_dashboard', as: 'user_dashboard'
   get '/dashboard/user/:id/groups', to: 'users#user_groups', as: 'user_groups'
   get '/dashboard/user/:id/events', to: 'users#user_events', as: 'user_events'
+  get '/dashboard/user/:id/profile', to: 'users#user_profile', as: 'user_profile'
   devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations"}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
