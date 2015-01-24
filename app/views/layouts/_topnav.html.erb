@@ -1,56 +1,42 @@
 <!-- Mainbar starts -->
 <div class="mainbar">
-
-	<!-- Mainbar head starts -->
+<!-- Mainbar head starts -->
 	<div class="main-head">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3 col-sm-4 col-xs-6">
-					<!-- Page title -->
+				<div class="col-sm-7 col-xs-6">
+				<!-- Page title -->
 					<h2><%= link_to "#{@group.name}", group_dashboard_path(@group) rescue "" %></h2>
 				</div>
-				
-				<div class="col-md-3 col-sm-4 col-xs-6">
-				</div>
-				
-				<div class="col-md-3 col-sm-4 hidden-xs">
-				</div>
-				
-				
-				<div class="col-md-3 hidden-sm hidden-xs">
-					<!-- Head user -->
+			
+				<div class="col-sm-4 hidden-sm hidden-xs">
+				<!-- Head user -->
 					<div class="head-user dropdown pull-right">
 						<a href="#" data-toggle="dropdown" id="profile">
-							<!-- Icon 
-							<i class="fa fa-user"></i>  -->
-							
 							<% if current_user %>
-								<!-- User Name -->
-								<%= "#{current_user.first_name} #{current_user.last_name}" %>
-							
 								<!-- User image -->
-								<img src='<%= current_user.avatar_url %>' alt="" class="img-responsive img-circle"/> 
+								<img src='<%= current_user.avatar_url %>' alt="" class="img-responsive img-circle">
+								<!-- User Name -->
+								<%="#{current_user.first_name} #{current_user.last_name}" %>
 							<% end %>
 						</a>
 						<!-- Dropdown -->
 						<ul class="dropdown-menu" aria-labelledby="profile">
-						    <li><%= link_to 'Profile', user_profile_path(current_user) %></li>
-							<li><%= link_to 'Dashboard', user_dashboard_path(current_user) %></li>
-							<li><%=link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+							<li><%= link_to 'View Profile', user_profile_path(current_user) %></li>
+						    <li><%= link_to 'Dashboard', user_dashboard_path(current_user) %></li>
+							<li class="divider"></li>
+							<li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
 						</ul>
 					</div>
 					<div class="clearfix"></div>
 				</div>
 			</div>	
 		</div>
-		
 	</div>
-	
-	<!-- Mainbar head ends -->
+<!-- Mainbar head ends -->
 
-
-	<!-- main content begins -->
+<!-- main content begins -->
 	<%= yield %>
-	
+
 </div>
 <!-- Mainbar ends -->
