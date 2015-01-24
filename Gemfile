@@ -54,6 +54,7 @@ group :development, :test do
   gem "guard-bundler"
   gem "rb-fsevent"
   gem "faker"
+  gem "pry"
 end
 
 group :test do

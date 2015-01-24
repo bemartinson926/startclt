@@ -265,6 +265,7 @@ DEPENDENCIES
   kaminari
   launchy
   pg
+  pry
   rails (= 4.1.8)
   rb-fsevent
   rolify
