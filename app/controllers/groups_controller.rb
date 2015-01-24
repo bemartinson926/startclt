@@ -42,6 +42,7 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
+    @group[:user_id] = current_user.id
     @group.save
     respond_with(@group) do |format|
       format.html { redirect_to group_dashboard_path(@group) }
@@ -63,7 +64,9 @@ class GroupsController < ApplicationController
       @group = Group.find_by slug: params[:id]
     end
 
+    
+
     def group_params
-      params.require(:group).permit(:name, :description)
+      params.require(:group).permit(:name, :description, :user_id)
     end
 end
