@@ -1,10 +1,10 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_models, only: [:index, :show, :edit, :update, :destroy]
 
   respond_to :html
 
   def index
-    @events = Event.all
+    @events = @group.events.all
     respond_with(@events)
   end
 
@@ -37,6 +37,15 @@ class EventsController < ApplicationController
   end
 
   private
+    def set_models
+      set_group
+      set_event
+    end
+
+    def set_group
+      @group = Group.find_by slug: params[:group_id]
+    end
+
     def set_event
       @event = Event.find_by slug: params[:id]
     end

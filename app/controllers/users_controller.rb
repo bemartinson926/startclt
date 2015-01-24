@@ -1,24 +1,25 @@
 class UsersController < ApplicationController
-  #before_action :set_user, only: [:show, :user_dashboard, :edit, :update, :destroy]
+  before_action :set_user, except: [:user_dashboard]
   
   def user_dashboard
   	@user = User.find(params[:id])
   end
 
   def user_groups
-  	@user = User.find(params[:id])
   end
 
   def user_events
-  	@user = User.find(params[:id])
   end
 
   def user_profile
-    @user = User.find(params[:id])
   end
 
   def show
   end
 
+  private
 
+  def set_user
+    @user = User.find_by slug: params[:id]
+  end
 end
