@@ -5,7 +5,7 @@ class Group < ActiveRecord::Base
   has_many :users, through: :memberships
   has_many :events
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 
   sluggable_column :name
 end

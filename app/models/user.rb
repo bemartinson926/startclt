@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  include Sluggable
+
+  sluggable_column :email
+
   before_validation :prep_email
   before_save :create_avatar_url
 
