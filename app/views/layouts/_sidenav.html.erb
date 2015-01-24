@@ -1,4 +1,4 @@
-<% if controller_name == 'users' %>
+<% if controller_name == 'users' || current_page?(new_group_path) %>
 
 	<%= render 'layouts/user_side_bar' %>
 
