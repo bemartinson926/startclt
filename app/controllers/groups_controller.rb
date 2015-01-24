@@ -61,7 +61,7 @@ class GroupsController < ApplicationController
 
   private
     def set_group
-      @group = Group.find_by slug: params[:event_id]
+      @group = Group.find_by slug: params[:id]
     end
 
     
