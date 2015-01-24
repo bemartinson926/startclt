@@ -14,7 +14,7 @@ mat = User.find_by(email: "matbanbury@gmail.com") || User.create(email: "matbanb
 # Create 5 mat groups 
 
 5.times do |i|
-  g = Group.create(name: Faker::Company.name
+  g = Group.create(name: Faker::Company.name,
                    description: Faker::Hacker.say_something_smart)
   puts "Created #{g.name}"
   10.times do |e|
