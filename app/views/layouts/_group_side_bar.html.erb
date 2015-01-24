@@ -1,0 +1,35 @@
+<!-- Sidebar starts -->
+  <div class="sidebar">
+  
+    <div class="sidey">
+  
+      <!-- Logo -->
+      <div class="logo">
+        <h1><a href="/dashboard/user/<%= current_user.id %>">Start CLT <span>Get Together</span></a></h1>
+      </div>
+      
+      <!-- Sidebar navigation starts -->
+      
+      <!-- Responsive dropdown -->
+      <div class="sidebar-dropdown"><a href="#" class="br-red"><i class="fa fa-bars"></i>Menu</a></div>
+      
+      <div class="side-nav">
+        
+        <div class="side-nav-block">
+          <h4>Menu</h4>
+          <ul class="list-unstyled">
+            <li><a href="#">New Event</a></li>
+            <li style="border-bottom: 1px solid #444;"><%= link_to 'Invite Members', group_invite_path(@group) %></li>
+            <li><%= link_to 'Group Members', group_members_path(@group) %></li>
+            <li><%= link_to 'Group Events', group_events_path(@group) %></li>
+          </ul>
+        </div>
+        
+        
+      </div>
+      
+      <!-- Sidebar navigation ends -->
+      
+    </div>
+  </div>
+<!-- Sidebar ends -->

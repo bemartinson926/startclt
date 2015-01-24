@@ -14,10 +14,14 @@
 					<div class="head-user dropdown pull-right">
 						<a href="#" data-toggle="dropdown" id="profile">
 							<% if current_user %>
+								<!-- User Name -->
+								<% if current_user.first_name && current_user.last_name %>
+									<%= "#{current_user.first_name} #{current_user.last_name}" %>
+								<% else %>
+									<%= "#{current_user.email}" %>
+								<% end %>
 								<!-- User image -->
 								<img src='<%= current_user.avatar_url %>' alt="" class="img-responsive img-circle">
-								<!-- User Name -->
-								<%="#{current_user.first_name} #{current_user.last_name}" %>
 							<% end %>
 						</a>
 						<!-- Dropdown -->
