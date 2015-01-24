@@ -53,6 +53,7 @@ group :development, :test do
   gem "guard-rspec"
   gem "guard-bundler"
   gem "rb-fsevent"
+  gem "faker"
 end
 
 group :test do
@@ -62,7 +63,6 @@ group :test do
   gem "launchy"
   gem "database_cleaner"
   gem "codeclimate-test-reporter", require: nil
-  gem "faker"
   gem 'shoulda-matchers', require: false
 end
 
