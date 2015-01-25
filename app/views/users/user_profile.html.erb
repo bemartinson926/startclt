@@ -1,28 +1,43 @@
 <div class="main-content">
 	<div class="container">
-						
 		<div class="page-content">
-		
 			<!-- Heading -->
-			<div class="single-head">
-				<!-- Heading -->
-				<h3 class="pull-left"><%= @user.first_name %>'s Profile:</h3>
-				<br>
-				<img src='<%= @user.avatar_url %>'>
-				<h4>Name: <%= "#{@user.first_name} #{@user.last_name}" %></h4>
-				<h4>Email: <%= @user.email %></h4>
-				<h4>Bio: <%= @user.bio %></h4>
-				<h4>City: <%= @user.city %></h4>
-				<h4>State: <%= @user.state %></h4>
-				<h4>Phone: <%= @user.phone_number %></h4>
-				<% if @user.id == current_user.id %>
-					<%= link_to 'Edit Profile', edit_registration_path(@user) %>
-				<% end %>
-				<div class="clearfix"></div>
+			<div><!--was theme class="single-head"-->
+				<h3><%= @user.first_name %>'s Profile</h3>
 			</div>
 			
+			<div class="divider"></div>
 			
-		</div>
-		
-	</div>
-</div>
+			<div class="row">
+				
+				<div class="col-sm-3">
+					<img src='<%= @user.avatar_url %>' class=" profile img-thumbnail">
+				</div>
+
+					<div class="col-sm-9 pull-left">
+							<h4 class="profile-item"><strong>Name:</strong><%= "#{@user.first_name} #{@user.last_name}" %></h4>
+							<h4 class="profile-item"><strong>Email:</strong> <%= @user.email %></h4>
+							<h4 class="profile-item"><strong>City:</strong> <%= @user.city %></h4>
+							<h4 class="profile-item"><strong>State:</strong> <%= @user.state %></h4>
+
+							<h4 class="profile-item"><strong>Bio:</strong> <%= @user.bio %></h4>
+							<h4 class="profile-item"><strong>Phone:</strong> <%= @user.phone_number %></h4>
+						
+						<div class="clearfix"></div>
+					</div>
+				</div><!--/row-->
+				
+				<div class="row">
+					<div class="col-sm-9 col-sm-offset-3">
+						<% if @user.id == current_user.id %>
+							<%= link_to 'Edit Profile', edit_registration_path(@user), class: 'btn btn-lg btn-default' %>
+						<% end %>
+					</div>
+				</div><!--/row-->
+
+				<div class="clearfix"></div>
+			
+			</div><!--/single-head-->
+		</div><!--/page-content-->
+	</div><!--/container-->
+</div><!--main-content-->
