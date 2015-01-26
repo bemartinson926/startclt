@@ -13,8 +13,10 @@
  
  *= require_self
  *= require 'bootstrap'
+ 
  *= require 'style'
  *= require 'homepage'
+ *= require 'userprofile'
  *= require 'less-style'
 
  */
