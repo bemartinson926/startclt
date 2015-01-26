@@ -1,110 +1,114 @@
-<div class="container">
+<div class="main-content">
+  <div class="container">
+    <div class="page-content">
   <!-- <h2>Edit <%= resource_name.to_s.humanize %></h2> -->
-  <div class="row">
-    <h1 class="col-sm-10 col-sm-offset-2">Edit Your Profile</h1>
-  </div>
+      <div>
+        <h3>Edit Your Profile</h3>
+      </div>
+      
+      <div class="divider"></div>
   
-  <div class="form-horizontal">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+      <div class="form-horizontal">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
 
-  <div class="well well-lg">
-    <div class="form-group">
-      <div class="col-sm-6 col-sm-offset-4">
-        <i>Your current password is required to make changes to this account.</i></div>
-      <label class="col-sm-4 control-label">Current Password</label>
-        <div class="col-sm-6">
-          <%= f.password_field :current_password, class: 'form-control' %>
+        <div class="well well-lg">
+          <div class="form-group">
+            <div class="col-sm-6 col-sm-offset-4">
+              <i class="small">Your current password is required to make changes to this account.</i></div>
+            <label class="col-sm-4 control-label">Current Password</label>
+              <div class="col-sm-6">
+                <%= f.password_field :current_password, class: 'form-control' %>
+              </div>
+          </div>
+        </div><!--/well-->
+        
+        <div class="well well-lg">
+          <div class="form-group">
+            <label class="col-sm-4 control-label">First Name</label>
+              <div class="col-sm-6">
+                <%= f.text_field :first_name, class: 'form-control' %>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Last Name</label>
+              <div class="col-sm-6">
+                <%= f.text_field :last_name, class: 'form-control'%>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 col-sm-offset-2 control-label">City</label>
+              <div class="col-sm-3">
+                <%= f.text_field :city, class: 'form-control'%>
+            </div>
+            <label class="col-sm-1 control-label">State</label>
+              <div class="col-sm-2">
+                <%= f.text_field :state, class: 'form-control'%>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Phone</label>
+              <div class="col-sm-6">
+                <%= f.text_field :phone_number, class: 'form-control'%>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Bio</label>
+              <div class="col-sm-6">
+                <%= f.text_area :bio, class: 'form-control' %>
+            </div>
+          </div>
+      </div><!--/well-->
+
+      <div class="well well-lg">
+        <div class="form-group">
+          <label class="col-sm-4 control-label">Change My Email</label>
+            <div class="col-sm-6">
+              <%= f.email_field :email,  autofocus: true, class: 'form-control', placeholder: 'enter a new email'%>
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                <% end %>
+            </div>
         </div>
-    </div>
-  </div><!--/well-->
-  
-  <div class="well well-lg">
-    <div class="form-group">
-      <label class="col-sm-4 control-label">First Name</label>
-        <div class="col-sm-6">
-          <%= f.text_field :first_name, class: 'form-control' %>
-        </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-sm-4 control-label">Last Name</label>
-        <div class="col-sm-6">
-          <%= f.text_field :last_name, class: 'form-control'%>
       </div>
-    </div>
 
-    <div class="form-group">
-      <label class="col-sm-2 col-sm-offset-2 control-label">City</label>
-        <div class="col-sm-3">
-          <%= f.text_field :city, class: 'form-control'%>
-      </div>
-      <label class="col-sm-1 control-label">State</label>
-        <div class="col-sm-2">
-          <%= f.text_field :state, class: 'form-control'%>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-sm-4 control-label">Phone</label>
-        <div class="col-sm-6">
-          <%= f.text_field :phone_number, class: 'form-control'%>
-      </div>
-    </div>
-    
-
-    <div class="form-group">
-      <label class="col-sm-4 control-label">Bio</label>
-        <div class="col-sm-6">
-          <%= f.text_area :bio, class: 'form-control' %>
-      </div>
-    </div>
-</div><!--/well-->
-
-    <div class="well well-lg">
-      <div class="form-group">
-        <label class="col-sm-4 control-label">Change My Email</label>
+      <div class="well well-lg">
+        <div class="form-group">
+          <label class="col-sm-4 control-label">Change My Password</label>
           <div class="col-sm-6">
-            <%= f.email_field :email,  autofocus: true, class: 'form-control', placeholder: 'enter a new email'%>
-              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-              <% end %>
+          <%= f.password_field :password, :autocomplete => 'off', class: 'form-control', placeholder: 'enter a new password'%>
           </div>
       </div>
-    </div>
-
-    <div class="well well-lg">
-      <div class="form-group">
-        <label class="col-sm-4 control-label">Change My Password</label>
-        <div class="col-sm-6">
-        <%= f.password_field :password, :autocomplete => 'off', class: 'form-control', placeholder: 'enter a new password'%>
-        </div>
-    </div>
           
-    <div class="form-group">
-      <label class="col-sm-4 control-label">Confirm New Password</label>
-        <div class="col-sm-6">
-          <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: 'retype new password' %>
+      <div class="form-group">
+        <label class="col-sm-4 control-label">Confirm New Password</label>
+          <div class="col-sm-6">
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: 'retype new password' %>
+          </div>
         </div>
-      </div>
-    </div><!--/well-->
+      </div><!--/well-->
 
-    <div class="text-center">
-      <%= f.submit "Save My Changes", class:'btn btn-lg btn-success' %>
-      <% end %>
-    </div>
-  
-  <div class="divider"></div>
-
-    <div class="well well-lg">
       <div class="text-center">
-        <p>Unhappy? We'll be sad to see you go...</p>
-          <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, class:'btn btn-lg', method: :delete %>
-          <!--TODO: Check whether route below is correct, or if link needed at all-->
-          <!--<%= link_to 'Back to Profile', user_profile_path(current_user) %>-->
+        <%= f.submit "Save My Changes", class:'btn btn-lg btn-success' %>
+        <% end %>
       </div>
-    </div>
   
-  </div><!--/form-horizontal-->
-</div><!--/container-->
+      <div class="divider spacer"></div>
+
+        <div class="well well-lg">
+          <div class="text-center">
+            <p>Unhappy? We'll be sad to see you go...</p>
+              <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, class:'btn btn-lg', method: :delete %>
+              <!--TODO: Check whether route below is correct, or if link needed at all-->
+              <!--<%= link_to 'Back to Profile', user_profile_path(current_user) %>-->
+          </div>
+        </div>
+      </div><!--/form-horizontal-->
+    </div><!--/page-content-->
+  </div><!--/container-->
+</div><!--/main-content-->
 
