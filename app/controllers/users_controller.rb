@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, except: [:user_dashboard]
+  before_action :set_user
   
   def user_dashboard
-  	@user = User.find(params[:id])
   end
 
   def user_groups
