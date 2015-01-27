@@ -6,4 +6,9 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
   	"/dashboard/user/#{current_user.slug}"
   end
+
+  def access_denied
+    flash[:danger] = "You don't have permission to do that."
+    redirect_to :back
+  end
 end
