@@ -4,9 +4,9 @@
     <div class="nav_item">
       <p id="welcome">Welcome, <%= current_user.first_name %></p>
     </div>
-    <div class="nav_item">
+    <div class="nav_item"> -->
     <!--NOTE: change/reference all button colors in less.css.scss file-->
-      <button type="button" class="btn btn-lg br-white"><%=link_to 'Sign Out', destroy_user_session_path, method: :delete %></button>
+      <button type="button" class="btn btn-lg "><%=link_to 'Sign Out', destroy_user_session_path, method: :delete %></button>
     </div>
   <% else %>
     <div class="nav_item">
@@ -20,9 +20,8 @@
 </div>
 
 <div id="header">
-  <!-- TODO<div class="overlay top"></div> delete if not needed based on image-->
-  <!-- TODO<img class="img-responsive" src="http://placehold.it/1450x550" /> -->
-  <img class="img-responsive" src="http://www.startcharlotte.com/images/cropped-sclt.png" />
+  <%= image_tag 'city-meeting1450cropped.jpg', class: 'img-responsive' %>
+
     <div class="overlay lower"></div>
       <div class="container">
         <div class="row">
@@ -33,125 +32,129 @@
       </div><!--</container> -->
 </div><!-- </header> -->
 
-<!-- TODO<div class="divider"></div> include or delete based on final image-->
+
 
 <!--main content****************************************************************-->
-    
-<div class="container feature">
-  <div class="row">
-    <div class="col-sm-5">
-      <h3 class="feature-title">Start a Group</h3>
-      <p class="explain">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-    <div class="col-sm-5 col-sm-offset-1">
-      <img class="img-responsive hidden-xs" src="http://placehold.it/400x200" />
-    </div>
-  </div>
-</div>
-    
-<hr class="custom" />
-
-<!--**********************************************************************-->
-<div class="container feature">
-  <div class="row">
-    <div class="col-sm-5">
-      <img class="img-responsive hidden-xs" src="http://placehold.it/400x200" />
-
-    </div>
-    
-    <div class="col-sm-6 col-sm-offset-1">
-      <h3 class="feature-title">Plan Your Event</h3>
+<div class="homepage-content"> 
+ 
+  <div class="container feature">
+    <div class="row">
+      <div class="col-sm-5">
+        <h3 class="feature-title">Start a Group</h3>
         <p class="explain">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="col-sm-5 col-sm-offset-1">
+        <img class="img-responsive hidden-xs" src="http://placehold.it/400x200" />
+      </div>
     </div>
   </div>
-</div>
-   
-<hr class="custom" />
+      
+  <hr class="custom" />
 
-<!--**********************************************************************-->
+  <!--**********************************************************************-->
+  <div class="container feature">
+    <div class="row">
+      <div class="col-sm-5">
+        <img class="img-responsive hidden-xs" src="http://placehold.it/400x200" />
 
-<div class="container feature">
-  <div class="row">
-    <div class="col-sm-5">
-      <h3 class="feature-title">Spread the Word</h3>
-      <p class="explain">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-  
-    <div class="col-sm-5 col-sm-offset-1">
-      <img class="img-responsive hidden-xs" src="http://placehold.it/400x200" />
+      </div>
+      
+      <div class="col-sm-6 col-sm-offset-1">
+        <h3 class="feature-title">Plan Your Event</h3>
+          <p class="explain">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
     </div>
   </div>
-</div>
-    
-<hr class="custom" />
+     
+  <hr class="custom" />
 
-<!--**********************************************************************-->
+  <!--**********************************************************************-->
 
-<div class="container feature">
-  <div class="row">
-    <div class="col-sm-5">
-      <img class="img-responsive hidden-xs" src="http://placehold.it/400x200" />
-    </div>
-  
-    <div class="col-sm-6 col-sm-offset-1">
-      <h3 class="feature-title">Manage RSVPs</h3>
+  <div class="container feature">
+    <div class="row">
+      <div class="col-sm-5">
+        <h3 class="feature-title">Spread the Word</h3>
         <p class="explain">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    
+      <div class="col-sm-5 col-sm-offset-1">
+        <img class="img-responsive hidden-xs" src="http://placehold.it/400x200" />
+      </div>
     </div>
   </div>
-</div>
+      
+  <hr class="custom" />
 
-<hr class="custom" />
+  <!--**********************************************************************-->
 
-<!--**********************************************************************-->
-
-<div class="container feature">
-  <div class="row">
-    <div class="col-sm-5">
-      <h3 class="feature-title">Accept Payments Online</h3>
-      <p class="explain">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
+  <div class="container feature">
+    <div class="row">
+      <div class="col-sm-5">
+        <img class="img-responsive hidden-xs" src="http://placehold.it/400x200" />
+      </div>
     
-    <div class="col-sm-5 col-sm-offset-1">
-      <img class="img-responsive hidden-xs" src="http://placehold.it/400x200" />
+      <div class="col-sm-6 col-sm-offset-1">
+        <h3 class="feature-title">Manage RSVPs</h3>
+          <p class="explain">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
     </div>
   </div>
-</div>
-    
-<hr class="custom" />
 
-<!--**********************************************************************-->
+  <hr class="custom" />
 
-<div class="call-to-action">
-  <div class="row">
-    <div class="col-sm-4 col-sm-offset-4 text-center col-xs-6 col-xs-offset-3">
-      <div class="panel panel-default">
-        <div class="panel-heading text-center"><h3>Ready to get started?</h3></div>
-          <div class="panel-body text-center">
-            Create as many groups and events as you need, for free!      
-            <hr>
-              <button type="button" class="btn btn-lg btn-default btn-block">
-                 <%= link_to 'Sign Up', new_user_registration_path %>
-              </button>
+  <!--**********************************************************************-->
+
+  <div class="container feature">
+    <div class="row">
+      <div class="col-sm-5">
+        <h3 class="feature-title">Accept Payments Online</h3>
+        <p class="explain">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      
+      <div class="col-sm-5 col-sm-offset-1">
+        <img class="img-responsive hidden-xs" src="http://placehold.it/400x200" />
+      </div>
+    </div>
+  </div>
+      
+  <!-- <hr class="custom" /> -->
+
+  <!--**********************************************************************-->
+<div class="jumbotron">
+  <div class="call-to-action">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4 text-center col-xs-6 col-xs-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-heading text-center"><h3>Ready to get started?</h3></div>
+            <div class="panel-body text-center">
+              Create as many groups and events as you need, for free!      
+              <hr>
+                <button type="button" class="btn btn-lg btn-default btn-block">
+                   <%= link_to 'Sign Up', new_user_registration_path %>
+                </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>    
+</div>
 
-<!--**********************************************************************-->
-  
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 text-center">
-          <hr>
-          <p>TTS CodePilots ©2015</p>
-          <h4><a href="#" title="Scroll to Top">Back to Top</a></h4>
+  <!--**********************************************************************-->
+    
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3 text-center">
+            <hr>
+            <p>TTS CodePilots ©2015</p>
+            <h4><a href="#" title="Scroll to Top">Back to Top</a></h4>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+
+</div><!--/homepage-content-->
 
   
 
