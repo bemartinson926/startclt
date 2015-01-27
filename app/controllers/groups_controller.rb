@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :group_dashboard, :edit, :update, :destroy, :group_invite, :group_members, :group_events]
+  before_action :set_group, except: [:index, :first_group, :new, :create]
   before_action :authenticate_user!
+  before_action :require_creator, only: [:edit, :update, :destroy]
 
   respond_to :html
 
@@ -23,10 +24,10 @@ class GroupsController < ApplicationController
     respond_with(@group)
   end
   
-  def index
-    @groups = Group.all
-    respond_with(@groups)
-  end
+  # def index
+  #   @groups = Group.all
+  #   respond_with(@groups)
+  # end
 
   def show
     respond_with(@group)
@@ -60,13 +61,17 @@ class GroupsController < ApplicationController
   end
 
   private
+
+    def require_creator
+      access_denied unless user_signed_in? && (current_user.id == @group.user_id)
+    end
+
     def set_group
       @group = Group.find_by slug: params[:id]
     end
 
-    
-
     def group_params
       params.require(:group).permit(:name, :description, :user_id)
     end
+    
 end
