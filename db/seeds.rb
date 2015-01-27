@@ -6,18 +6,19 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'faker'
-require 'active_support'
 
-you = User.find_by(email: "test@example.com") || User.create(email: "test@example.com", password: "password")
 mat = User.find_by(email: "matbanbury@gmail.com") || User.create(email: "matbanbury@gmail.com", password: "password")
 
 # Create 5 mat groups 
 
-5.times do |i|
+5.times do
   g = Group.create(name: Faker::Company.name,
-                   description: Faker::Hacker.say_something_smart)
+                   description: Faker::Hacker.say_something_smart,
+                   user_id: [1,2][rand(2)]
+                   )
   puts "Created #{g.name}"
-  10.times do |e|
+  
+  10.times do
     starts_at = (rand(14)-7).days.from_now
     ends_at = 1.5.hours.from_now(starts_at)
     ev = Event.create(name: Faker::Lorem.words(5).join(" "), 
@@ -28,9 +29,22 @@ mat = User.find_by(email: "matbanbury@gmail.com") || User.create(email: "matbanb
                       ends_at: ends_at
                       )
     puts "Created event #{ev.name}"
+
+    u = User.create(email: Faker::Internet.email,
+                    password: "password",
+                    first_name: Faker::Name.first_name,
+                    last_name: Faker::Name.last_name,
+                    bio: Faker::Lorem.paragraph,
+                    city: Faker::Address.city,
+                    state: Faker::Address.state,
+                    phone_number: Faker::PhoneNumber.phone_number,
+                    )
+    u.groups << g
+    puts "Created user #{u.email} as a member of group #{g.name}"
   end
+
   if rand(2) == 0
-    you.groups << g 
-    puts "Added you to #{g.name}"
+    mat.groups << g 
+    puts "Added Mat to group #{g.name}"
   end
 end
