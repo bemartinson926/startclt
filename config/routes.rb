@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/dashboard/group/:id/events', to: 'groups#group_events', as: 'group_events'
   get '/dashboard/group/:id/members', to: 'groups#group_members', as: 'group_members' 
   
-  resources :groups do
+  resources :groups, except: [:index] do
     resources :events
   end
 
