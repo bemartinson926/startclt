@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var changer = $('#changer');
-    var replacements = [' a workshop', ' a conference', ' an experience'];
+    var replacements = ['Host a workshop', 'Host a conference', 'Host an experience'];
     var i = 0;
 
     function swapText() {

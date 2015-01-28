@@ -12,11 +12,24 @@
 	background-color:transparent;
 }
 
-.br-white:hover {
+
+
+.link-style {
+	text-transform:uppercase;
+	font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size:18px;
+	color:#fff;
+	margin-right:20px;
+}
+
+.link-style:hover {
+	color:#FBEC5D;
+}
+
+/*.br-white:hover {
 	background-color:#C2DCF2;
 	border: 1px solid #e1edf2;
-
-}
+}*/
 
 #welcome { display:inline-block; }
 
@@ -29,28 +42,25 @@
 
 .overlay {
 	width:100%;
-	height:15%;
+	height:18%;
 	position:absolute;
-	bottom:0px;
+	bottom:15%;
 	background-color:#080808;
 	opacity:0.5;
 }
 
-.overlay.lower {
-	height:15%;
-	bottom:0px;
-}
-
 .header-text {
-	font-size:55px;
+	font-size:50px;
 	margin-bottom: -15px;
 	font-weight:600;
 	color:#fff;
+	text-transform:uppercase;
+	font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .textbox {
 	position:absolute;
-	bottom:8%;
+	bottom:24%;
 }
 
 .homepage-content { margin-top: -45px; }
@@ -84,10 +94,34 @@
 	color:#5c7a9e;
 }
 
-.jumbotron {
-	background-image: image-url("sunset.jpg");
-	background-image: image-url("desk.jpeg");
+.container.feature.desk {
+	background-image: image-url("desk-cropped.jpg");
+	width:90%;
 }
+
+.backfill {
+	background-color:#fff;
+	opacity:0.7;
+	border-radius:3px;
+	padding:10px;
+	
+}
+
+.feature-title.front {
+	color:#344152;
+}
+p.explain.front {
+	color:#222;
+}
+
+.jumbotron.room {
+	
+	background-image: image-url("nyc-cropped.jpg");
+	background-image: image-url("sunset-cropped.jpg");
+	background-image: image-url("desk-cropped.jpg");
+	background-image: image-url("bw-room-cropped.jpg");
+}
+	
 
 footer { 
 	margin-top:0px;
