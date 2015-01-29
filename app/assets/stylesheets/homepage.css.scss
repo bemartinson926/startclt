@@ -12,8 +12,6 @@
 	background-color:transparent;
 }
 
-
-
 .link-style {
 	text-transform:uppercase;
 	font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -24,6 +22,10 @@
 
 .link-style:hover {
 	color:#FBEC5D;
+}
+
+.link-style.dark {
+	color:#080808;
 }
 
 /*.br-white:hover {
@@ -95,7 +97,13 @@
 }
 
 .container.feature.desk {
+	background-image: image-url("clipboard.jpg");
 	background-image: image-url("desk-cropped.jpg");
+	width:90%;
+}
+
+.container.feature.room{
+	background-image: image-url("big-window.jpg");
 	width:90%;
 }
 
@@ -104,25 +112,24 @@
 	opacity:0.7;
 	border-radius:3px;
 	padding:10px;
-	
 }
 
 .feature-title.front {
 	color:#344152;
 }
+
 p.explain.front {
 	color:#222;
 }
 
-.jumbotron.room {
-	
+.jumbotron.meeting {
 	background-image: image-url("nyc-cropped.jpg");
-	background-image: image-url("sunset-cropped.jpg");
-	background-image: image-url("desk-cropped.jpg");
-	background-image: image-url("bw-room-cropped.jpg");
+}
+
+.br-custom-blue {
+	background-color:#93BCE6;
 }
 	
-
 footer { 
 	margin-top:0px;
 	margin-bottom:30px;

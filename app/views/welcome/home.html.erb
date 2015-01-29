@@ -89,15 +89,13 @@
 
   <!--**********************************************************************-->
 
-  <div class="container feature">
+  <div class="container feature room">
     <div class="row">
-      <div class="col-sm-5">
-        <img class="img-responsive hidden-xs" src="http://placehold.it/400x200" />
-      </div>
-    
-      <div class="col-sm-6 col-sm-offset-1">
-        <h3 class="feature-title">Manage RSVPs</h3>
-          <p class="explain">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="col-sm-5 col-sm-offset-6">">
+        <div class="backfill">
+          <h3 class="feature-title front">Manage RSVPs</h3>
+            <p class="explain front">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -122,17 +120,17 @@
   <!-- <hr class="custom" /> -->
 
   <!--**********************************************************************-->
-<div class="jumbotron room">
+<div class="jumbotron meeting">
   <div class="call-to-action">
     <div class="row">
       <div class="col-sm-4 col-sm-offset-4 text-center col-xs-6 col-xs-offset-3">
-        <div class="panel panel-default">
-          <div class="panel-heading text-center"><h3>Ready to get started?</h3></div>
+        <div class="panel">
+          <div class="panel-heading br-black text-center "><h3 class="link-style">Ready to get started?</h3></div>
             <div class="panel-body text-center">
-              Create as many groups and events as you need, for free!      
+              Create as many groups and host as many events as you need, always free!      
               <hr>
-                <button type="button" class="btn btn-lg btn-default btn-block">
-                   <%= link_to 'Sign Up', new_user_registration_path %>
+                <button type="button" class="btn btn-lg btn-block br-custom-blue">
+                   <%= link_to 'Sign Up', new_user_registration_path, class: 'link-style dark' %>
                 </button>
             </div>
           </div>
