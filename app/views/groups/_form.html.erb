@@ -22,8 +22,10 @@
   <div class="field">
       <%= hidden_field_tag(:user_id, current_user.id) %>
   </div>
-  <div class="actions">
-    <%= f.submit 'Create Group', class:'btn btn-lg btn-success'%>
+  <div class="col-sm-offset-2">
+    <div class="actions">
+      <%= f.submit 'Submit', class:'btn btn-lg link-style dark br-custom-blue'%>
+    </div>
   </div>
 <% end %>
 </div>
