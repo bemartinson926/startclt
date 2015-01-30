@@ -2,18 +2,31 @@
   <div class="container">
     <div class="page-content">
   		<div>
-        	<h3>Create a New Group</h3>
-      	</div>
+          <h3>Welcome, <%= "#{current_user.first_name}" || "#{current_user.email}" %>!</h3>
+
+          <hr />
+          
+          <p>To begin using your Start Charlotte account, create your first group below. <br /> 
+          (You will be assigned the role of group administrator automatically upon submit). <br />
+          Or, you can skip this step and go directly to your user dashboard.</p>
+
+          <hr />
+          
+        	<h3>Create Your First Group</h3>
       
-      	<div class="divider"></div>
+      </div>
+      
+        <div class="divider"></div>
 
-		<div class="well well-lg">
-          	
-          	<%= render 'form' %>
-            <%= link_to 'Skip this Step for Now', user_dashboard_path(current_user) %>
+  		  <div class="well well-lg">
+            	
+            	<%= render 'form' %>
 
-			
-		</div><!--/well well-lg-->
-	</div><!--/page-content-->
+              <!-- <div class="col-sm-3 col-sm-offset-2"> -->
+              <%= link_to 'Skip this Step for Now >>', user_dashboard_path(current_user) %>
+              <!-- </div> -->
+
+		    </div><!--/well well-lg-->
+	   </div><!--/page-content-->
   </div><!--/container-->
 </div><!--/main-content-->
