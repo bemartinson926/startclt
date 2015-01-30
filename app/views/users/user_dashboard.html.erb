@@ -1,8 +1,9 @@
 <div class="main-content">
 	<div class="container">
-
-		<h1>This is a sample user dashboard for <%= @user.email %></h1>
-		<div class="row">
+		<div><h3>User Dashboard For: <%= @user.email %></h3></div>
+      
+      		<div class="divider"></div>
+			<div class="row">
 
 			<%= render 'user_dashboard_groups' %>
 			
