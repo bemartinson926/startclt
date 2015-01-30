@@ -5,6 +5,17 @@ class GroupsController < ApplicationController
 
   respond_to :html
 
+  def add_user_to_group
+    @membership = Membership.new
+    @membership[:user_id] = current_user.id
+    @membership[:group_id] = @group.id
+    @membership.save
+    respond_with(@membership) do |format|
+      format.html { redirect_to user_dashboard_path(current_user), notice: "You have been added to #{@group.name}" }
+    end
+
+  end
+
   def group_events
     @events = @group.events
   end
