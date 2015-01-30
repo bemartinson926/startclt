@@ -1,0 +1,49 @@
+<div class="col-md-5">
+  <!-- Contacts widget -->
+  <div class="widget contacts-widget">
+    
+    <div class="widget-head br-black">
+      <h2 class="link-style no-hov">Members</h2>
+    </div>
+    
+    <div class="widget-body scroll">
+      
+      <ul class="list-unstyled">
+        <div class="clearfix"></div>
+        
+          <% @group.memberships.each do |membership| %>
+            <li class="c-list">
+              <!-- Contact pic -->
+              <div class="contact-pic">
+              <!--TODO: adjust for each member's avatar, not current_user-->
+                <img src='<%= membership.user.avatar_url %>' alt="" class="img-responsive img-circle">
+              </div>
+              <!-- Contact details -->
+              <div class="contact-details">
+                <!-- Contact name and number -->
+                <div class="pull-left">
+                  <strong><%= membership.user.first_name || membership.user.email %></strong>
+                  <small><%= membership.user.phone_number || "Phone Number" %></small>
+                </div>
+                <!-- Call, Message and Email buttons -->
+                <div class="pull-right">
+                  <a href="#" class="btn btn-danger btn-xs"></a>
+                  <a href="#" class="btn btn-info btn-xs"></a>
+                  <a href="#" class="btn btn-success btn-xs"></a>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </li>
+          <% end %>
+
+      </ul>
+    </div><!--/widget-body-scroll-->
+    
+    <div class="widget-foot">
+      <h4 class="pull-left">1 Member(s)</h4>
+      <a href="#" class="btn btn-sm pull-right br-white">Add New Member</a>
+      <div class="clearfix"></div>
+    </div>
+    
+  </div><!--/widget-->
+</div>

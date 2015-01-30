@@ -1,115 +1,15 @@
 <div class="main-content">
 	<div class="container">
 		<div class="page-content">
-  			<div><h3>Dashboard: <%= @group.name %></h3></div>
-      
-      		<div class="divider"></div>
-				<div class="row">
-					<div class="col-md-7">
-						<!-- Pages widget -->
-						<div class="widget pages-widget">
-							<div class="widget-head br-custom-blue">
-								<h2 class="link-style no-hov">Events</h2>
-							</div>
-					
-							<div class="widget-body no-padd">
-						
-								<div class="table-responsive">
-									<table class="table table-bordered">
-										<!-- Table heading -->
-										<tr> 
-											<th><input type="checkbox"></th>
-											<th>Event Title</th>
-											<th>Date</th>
-											<th>Location</th>
-											<th>Attending</th>
-											<th>Action</th>
-										</tr>
-									
-										<tr>
-											<!-- Check box -->
-											<td><input type="checkbox"></td>
-											<!-- Event Title -->
-											<td></td>
-											<!-- Date -->
-											<td></td>
-											<!-- Location -->
-											<td></td>
-											<!-- Attending -->
-											<td></td>
-											<!-- Action -->
-											<td></td>
-										</tr>
-									</table>
-								</div><!--/table-responsive-->
-							</div><!--/widget-body-->
-					
-							<div class="widget-foot">
-								<span class="pull-left">
-									<a href="#" class="btn btn-default btn-sm">Add New Page</a> &nbsp; 
-									<a href="#" class="btn btn-danger btn-sm">Delete All</a>
-								</span>
-								<div class="pull-right">
-									<!-- Pagination -->
-									<ul class="pagination">
-								  		<li><a href="#">&laquo;</a></li>
-								  		<li><a href="#">1</a></li>
-								  		<li><a href="#">2</a></li>
-								  		<li><a href="#">3</a></li>
-								  		<li><a href="#">5</a></li>
-								  		<li><a href="#">&raquo;</a></li>
-									</ul>
-								</div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="col-md-5">
-				<!-- Contacts widget -->
-				<div class="widget contacts-widget">
-					
-					<div class="widget-head br-black">
-						<h2 class="link-style no-hov">Members</h2>
-					</div>
-					
-					<div class="widget-body scroll">
-						
-						<ul class="list-unstyled">
-							<div class="clearfix"></div>
-								<li class="c-list">
-								<!-- Contact pic -->
-								<div class="contact-pic">
-								<!--TODO: adjust for each member's avatar, not current_user-->
-									<img src='<%= current_user.avatar_url %>' alt="" class="img-responsive img-circle">
-								</div>
-								<!-- Contact details -->
-								<div class="contact-details">
-									<!-- Contact name and number -->
-									<div class="pull-left">
-										<strong>Akshay Kumar</strong>
-										<small>(+1) 145-556-5848</small>
-									</div>
-									<!-- Call, Message and Email buttons -->
-									<div class="pull-right">
-										<a href="#" class="btn btn-danger btn-xs"></a>
-										<a href="#" class="btn btn-info btn-xs"></a>
-										<a href="#" class="btn btn-success btn-xs"></a>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</li>
-						</ul>
-					</div><!--/widget-body-scroll-->
-					
-					<div class="widget-foot">
-						<h4 class="pull-left">520 Members</h4>
-						<a href="#" class="btn btn-sm pull-right br-white">Add New Contact</a>
-						<div class="clearfix"></div>
-					</div>
-					
-					</div>
-				</div>
+  		<div><h3>Dashboard: <%= @group.name %></h3></div>
+
+      <div class="divider"></div>
+			<div class="row">
+
+				<%= render 'group_dashboard_events' %>
+
+				<%= render 'group_dashboard_members' %>
+
 			</div><!--/row-->
 		</div><!--/page-content-->
 	</div><!--/container-->
