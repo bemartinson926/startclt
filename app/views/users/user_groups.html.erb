@@ -9,6 +9,24 @@
 				<h3 class="pull-left"><%= current_user.first_name || current_user.email %>'s groups:</h3>
 				<div class="clearfix"></div>
 			</div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <!-- Table heading -->
+          <tr> 
+            <th>Group Name</th>
+            <th>Description</th>
+            <th>Members</th>
+          </tr>
+          <% current_user.groups.each do |group| %>
+            <tr>
+              <td><%= link_to "#{group.name}", group_info_path(group) %></td>
+              <td><%= group.description %></td>
+              <td><%= group.memberships.count %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
 			
 			
 		</div>
