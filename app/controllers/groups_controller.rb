@@ -13,7 +13,6 @@ class GroupsController < ApplicationController
     respond_with(@membership) do |format|
       format.html { redirect_to user_dashboard_path(current_user), notice: "You have been added to #{@group.name}" }
     end
-
   end
 
   def group_events

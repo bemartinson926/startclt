@@ -12,16 +12,11 @@
 			<center>
 			<h1><%r= @group.name %></h1>
 			<p><%= @group.description %></p>
-			<%= link_to "Join This Group", root_path, class: "btn btn-lg br-custom-blue link-style" %>
-			<% @test = @group %>
+			
 			<%= form_tag add_user_to_group_path(@group) do %>
-			<%= hidden_field_tag :group_id, value: @group.id %>
-			<% @test %>
-			<button type="submit" class="btn btn-lg btn-primary">Join This Group</button>
+				<%= hidden_field_tag :group_id, value: @group.id %>
+				<button type="submit" class="btn btn-lg btn-primary">Join This Group</button>
 			<% end %>
-
-			<%= @group.id %>
-			<%= current_user.id %>
 
 			
 		</div>
