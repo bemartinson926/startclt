@@ -17,22 +17,14 @@
             <th>Members</th>
             <th>Status</th>
           </tr>
-          <tr>
-            <!-- Check box -->
-            <td><input type="checkbox"></td>
-            <!-- Page name -->
-            <td><a href="#">TTS Grad Class</a></td>
-            <!-- Page size -->
-            <td>6</td>
-            <!-- Status -->
-            <td><span class="badge badge-danger">R</span></td>
-          </tr>
-          <tr>
-            <td><input type="checkbox"></td>
-            <td><a href="#">Skookum Night Shift</a></td>
-            <td>9</td>
-            <td><span class="badge badge-success">A</span></td>
-          </tr>          
+          <% current_user.groups.each do |group| %>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><%= group.name %></td>
+              <td><%= group.memberships.count %></td>
+              <td><span class="badge badge-danger">R</span></td>
+            </tr>
+          <% end %>
         </table>
       </div>
       
