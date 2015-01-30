@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :set_group, except: [:index, :first_group, :new, :create]
+  before_action :set_group, except: [:index, :first_group, :new, :create, :group_info]
   before_action :authenticate_user!
   before_action :require_creator, only: [:edit, :update, :destroy]
 
@@ -21,6 +21,14 @@ class GroupsController < ApplicationController
   end
 
   def group_dashboard
+    respond_with(@group)
+  end
+
+  def popular_groups
+    @groups = Group.all
+  end
+
+  def group_info
     respond_with(@group)
   end
   
