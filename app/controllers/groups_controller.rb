@@ -6,12 +6,17 @@ class GroupsController < ApplicationController
   respond_to :html
 
   def add_user_to_group
+    
     @membership = Membership.new
     @membership[:user_id] = current_user.id
     @membership[:group_id] = @group.id
-    @membership.save
-    respond_with(@membership) do |format|
+    if Membership.where(group_id: @group.id, user_id: current_user.id).count <= 0
+      @membership.save
+      respond_with(@membership) do |format|
       format.html { redirect_to user_dashboard_path(current_user), notice: "You have been added to #{@group.name}" }
+      end
+    else
+      redirect_to user_dashboard_path(current_user), notice: "You are already a member of #{@group.name}"
     end
   end
 
