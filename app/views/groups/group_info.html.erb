@@ -6,10 +6,13 @@
 			<!-- Heading -->
 			<div class="single-head">
 				<!-- Heading -->
-				<h3 class="pull-left">Group Info:</h3>
+				<h3 class="pull-left"><%= @group.name %> Info:</h3>
 				<div class="clearfix"></div>
 			</div>
-			
+			<center>
+			<h1><%= @group.name %></h1>
+			<p><%= @group.description %></p>
+			<%= link_to "Join This Group", root_path, class: "btn btn-lg br-custom-blue link-style" %>
 			
 		</div>
 		
