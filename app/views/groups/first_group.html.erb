@@ -10,9 +10,9 @@
 		<div class="well well-lg">
           	
           	<%= render 'form' %>
+            <%= link_to 'Skip this Step for Now', user_dashboard_path(current_user) %>
 
-			<!--TODO: Is this link needed at all?
-      <%= link_to 'Back', groups_path %>-->
+			
 		</div><!--/well well-lg-->
 	</div><!--/page-content-->
   </div><!--/container-->
