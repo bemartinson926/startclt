@@ -68,10 +68,13 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
     @group[:user_id] = current_user.id
     @group.save
+    #binding.pry
+    UserMailer.welcome_email(current_user).deliver
     respond_with(@group) do |format|
       format.html { redirect_to group_dashboard_path(@group) }
     end
   end
+
 
   def update
     @group.update(group_params)
