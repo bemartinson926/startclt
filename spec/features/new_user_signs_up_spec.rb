@@ -6,8 +6,8 @@ describe "New user signs up", :type => :feature do
 
     new_user = FactoryGirl.build(:user)
     visit root_path
-    within(:css, ".panel") { click_link('Sign Up Now') }
-    within(:css, ".new_user_register") do
+    within(:css, ".panel") { click_link('Sign Up') }
+    within(:css, ".new_user", visible: true) do
       fill_in('Email', with: new_user.email)
       fill_in('Password', with: new_user.password)
       fill_in('Password confirmation', with: new_user.password)

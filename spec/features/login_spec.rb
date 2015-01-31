@@ -15,8 +15,7 @@ feature 'User signs in' do
     end
     expect(page).to have_content "Start CLT"
     expect(page).to have_content "Get Together"
-    expect(page).to have_content @user.email
-    # page.should have_content "Welcome, #{@user.first_name}"
+    expect(page).to have_content "Signed in successfully."
   end
 
 
