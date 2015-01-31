@@ -7,17 +7,25 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'faker'
 
-mat = User.find_by(email: "matbanbury@gmail.com") || User.create(email: "matbanbury@gmail.com", password: "password")
+mat = User.find_by(email: "matbanbury@gmail.com") || 
+        User.create(email: "matbanbury@gmail.com", 
+                     password: "password",
+                     first_name: "Mat",
+                     last_name: "Banbury",
+                     city: "Charlotte",
+                     state: "NC",
+                     bio: "This is my bio.",
+                     phone_number: "980.339.0880"
+                     )
 
-# Create 5 mat groups 
+# Create 5 groups 
 
 5.times do
   g = Group.create(name: Faker::Company.name,
-                   description: Faker::Hacker.say_something_smart,
-                   user_id: [1,2][rand(2)]
+                   description: Faker::Hacker.say_something_smart
                    )
   puts "Created #{g.name}"
-  
+
   10.times do
     starts_at = (rand(14)-7).days.from_now
     ends_at = 1.5.hours.from_now(starts_at)
@@ -43,8 +51,9 @@ mat = User.find_by(email: "matbanbury@gmail.com") || User.create(email: "matbanb
     puts "Created user #{u.email} as a member of group #{g.name}"
   end
 
-  if rand(2) == 0
-    mat.groups << g 
-    puts "Added Mat to group #{g.name}"
-  end
+end
+
+Group.all.each do |g|
+  g.user_id = mat.id unless g.user_id
+  g.save
 end
