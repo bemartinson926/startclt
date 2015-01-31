@@ -1,3 +1,20 @@
+@font-face {
+font-family: 'FjallaOne-Regular';
+src: url(font-path('FjallaOne-Regular.ttf'));
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'FontAwesome';
+src: url(font-path('fontawesome-webfont.eot'));
+src: url(font-path('fontawesome-webfont.eot?#iefix')) format('embedded-opentype'),
+       url(font-path('fontawesome-webfont.woff')) format('woff'),
+       url(font-path('fontawesome-webfont.ttf')) format('truetype'),
+       url(font-path('fontawesome-webfont.svg#fontawesomeregular')) format('svg');
+font-weight: normal;
+font-style: normal;
+}
 
 .navbar {
 	background-color:transparent;
@@ -56,12 +73,12 @@
 }
 
 .header-text {
-	font-size:50px;
+	font-size:55px;
 	margin-bottom: -15px;
 	font-weight:600;
 	color:#fff;
 	text-transform:uppercase;
-	font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: FjallaOne-Regular,"Helvetica Neue", Helvetica,Arial,sans-serif;
 }
 
 .textbox {
@@ -98,6 +115,7 @@
 	margin-bottom:14px;
 	color:#666;
 	color:#5c7a9e;
+	font-family: FjallaOne-Regular,"Helvetica Neue", Helvetica,Arial,sans-serif;
 }
 
 .container.feature.desk {
