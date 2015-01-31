@@ -21,7 +21,7 @@ class GroupsController < ApplicationController
   end
 
   def group_events
-    @events = @group.events
+    @events = @group.events.all
   end
 
   def group_members
@@ -44,6 +44,7 @@ class GroupsController < ApplicationController
   end
 
   def group_info
+    @events = @group.events.all
     respond_with(@group)
   end
   

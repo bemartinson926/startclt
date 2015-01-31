@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   post 'add_user_to_group/:id' => 'groups#add_user_to_group', as: 'add_user_to_group'
+  post 'add_rsvp_to_event/:id' => 'events#add_rsvp_to_event', as: 'add_rsvp_to_event'
 
   get '/first_group' => 'groups#first_group', as: 'first_group'
   get '/dashboard/group/:id', to: 'groups#group_dashboard', as: 'group_dashboard'

@@ -3,20 +3,44 @@
 						
 		<div class="page-content">
 		
-			<!-- Heading -->
+			<!-- Heading for Group Info-->
 			<div class="single-head">
 				<!-- Heading -->
-				<h3 class="pull-left"><%= @group.name %> Info:</h3>
+				<h1 class="pull-left"><%= @group.name %> Info:</h1>
 				<div class="clearfix"></div>
+				
 			</div>
-			<center>
-			<h1><%r= @group.name %></h1>
+			
 			<p><%= @group.description %></p>
 			
 			<%= form_tag add_user_to_group_path(@group) do %>
-
 				<button type="submit" class="btn btn-lg btn-primary">Join This Group</button>
 			<% end %>
+		</div>
+	</div>
+
+	<br>
+
+	<div class="container">
+							
+			<div class="page-content">
+			<!-- Heading for Group Events-->
+			<div class="single-head">
+				<!-- Heading -->
+				<h1 class="pull-left"><%= @group.name %> Events:</h1>
+				<div class="clearfix"></div>
+			</div>
+
+			<% @events.each do |event| %>
+				<p>
+					<%= event.name %>
+					<%= link_to "RSVP", add_rsvp_to_event_path(:rsvp_event_id => event.id, :event_name => event.name), class: "btn btn-primary pull-right", method: "post" %>
+					<div class="clearfix"></div>
+				</p>
+
+				<p><%= event.description %></p>
+			<% end %>
+
 
 			
 		</div>
