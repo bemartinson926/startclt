@@ -1,75 +1,38 @@
 <div class="col-md-5">
-  <!-- Contacts widget -->
-  <div class="widget contacts-widget">
-    
+  <div class="widget pages-widget">
     <div class="widget-head br-black">
       <h2 class="link-style no-hov">Your Events</h2>
     </div>
-    
-    <div class="widget-body scroll">
-      
-      <ul class="list-unstyled">
-      
-        <!-- Alphabet with number of contacts -->
-        
-          <div class="clearfix"></div>
-        
-        
-        <!-- Single contact -->
-        <li class="c-list">
-          <!-- Contact pic -->
-          <div class="contact-pic">
-            <a href="#"><img src="img/user1.png" alt="" class="img-responsive"/></a>
-          </div>
-          <!-- Contact details -->
-          <div class="contact-details">
-            <!-- Contact name and number -->
-            <div class="pull-left">
-              <strong>TTS Demo Day</strong>
-              <small>(+1) 145-556-5848</small>
-            </div>
-            <!-- Call, Message and Email buttons -->
-            <div class="pull-right">
-              <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-phone"></i></a>
-              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-envelope-o"></i></a>
-              <a href="#" class="btn btn-success btn-xs"><i class="fa fa-comments"></i></a>
-            </div>
-            <div class="clearfix"></div>
-          </div>
-        </li>
 
-      <li class="c-list">
-          <!-- Contact pic -->
-          <div class="contact-pic">
-            <a href="#"><img src="img/user2.png" alt="" class="img-responsive"/></a>
-          </div>
-          <!-- Contact details -->
-          <div class="contact-details">
-            <!-- Contact name and number -->
-            <div class="pull-left">
-              <strong>Night Shift Launch Party</strong>
-              <small>(+11) 425-576-9849</small>
-            </div>
-            <!-- Call, Message and Email buttons -->
-            <div class="pull-right">
-              <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-phone"></i></a>
-              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-envelope-o"></i></a>
-              <a href="#" class="btn btn-success btn-xs"><i class="fa fa-comments"></i></a>
-            </div>
-            <div class="clearfix"></div>
-          </div>
-        </li>                      
-        
-      </ul>
-                          
-    </div>
-    
+    <div class="widget-body no-padd">
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <!-- Table heading -->
+          <tr> 
+            <th><input type="checkbox"></th>
+            <th>Event</th>
+            <th>Date</th>
+            <th>Location</th>
+          </tr>
+          <% current_user.groups.each do |group| %>
+            <% group.events.each do |event| %>
+              <tr>
+                <td><input type="checkbox"></td><!-- Check box -->
+                <td><%= event.name %></td><!-- Event Name -->
+                <td><%= event.starts_at %></td><!-- Date -->
+                <td><%= event.location %></td><!-- Location -->
+              </tr>
+            <% end %>    
+          <% end %>
+        </table>
+      </div><!--/table-responsive-->
+    </div><!--/widget-body-->
+
     <div class="widget-foot">
       <span class="pull-left">2 Events</span>
       <a href="#" class="btn btn-sm pull-right br-white">Add New Event</a>
       <div class="clearfix"></div>
-    </div>
+    </div><!-- /widget foot -->
     
   </div>
-
-</div>
+</div><!-- /col-md -->
