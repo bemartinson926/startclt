@@ -11,19 +11,19 @@
       <ul class="list-unstyled">
         <div class="clearfix"></div>
         
-          <% @group.memberships.each do |membership| %>
+          <% @group.users.each do |user| %>
             <li class="c-list">
               <!-- Contact pic -->
               <div class="contact-pic">
               <!--TODO: adjust for each member's avatar, not current_user-->
-                <img src='<%= membership.user.avatar_url %>' alt="" class="img-responsive img-circle">
+                <img src='<%= user.avatar_url %>' alt="" class="img-responsive img-circle">
               </div>
               <!-- Contact details -->
               <div class="contact-details">
                 <!-- Contact name and number -->
                 <div class="pull-left">
-                  <strong><%= membership.user.first_name || membership.user.email %></strong>
-                  <small><%= membership.user.phone_number || "Phone Number" %></small>
+                  <strong><%= user.first_name || user.email %></strong>
+                  <small><%= user.phone_number || "Phone Number" %></small>
                 </div>
                 <!-- Call, Message and Email buttons -->
                 <div class="pull-right">

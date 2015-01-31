@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
 
   def access_denied
     flash[:danger] = "You don't have permission to do that."
-    redirect_to :popular_groups
+    redirect_to :user_dashboard
   end
 end
