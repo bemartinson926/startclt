@@ -8,9 +8,11 @@ before_filter :configure_account_update_params, only: [:update]
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+   #def create
+    #super
+    #binding.pry
+    #UserMailer.welcome_email(@user).deliver
+  #end
 
   # GET /resource/edit
   # def edit
