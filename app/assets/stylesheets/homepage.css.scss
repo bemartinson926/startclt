@@ -109,11 +109,21 @@ font-style: normal;
 	width:90%;
 }
 
+.fa {
+	margin-right:5px;
+	color:#DEB887;
+	color:#C48E48;
+}
+
+.fa.fa-user {
+	color:#5c7a9e;
+	color:#555;
+}
+
 .feature-title {
 	font-size:24px;
 	font-weight:600;
 	margin-bottom:14px;
-	color:#666;
 	color:#5c7a9e;
 	font-family: FjallaOne-Regular,"Helvetica Neue", Helvetica,Arial,sans-serif;
 }
@@ -122,10 +132,12 @@ font-style: normal;
 	background-image: image-url("clipboard.jpg");
 	background-image: image-url("desk-cropped.jpg");
 	width:90%;
+	min-height:450px;
 }
 
 .container.feature.room{
 	background-image: image-url("big-window.jpg");
+	background-image: image-url("badges-warm.jpg");
 	width:90%;
 }
 
@@ -144,8 +156,9 @@ p.explain.front {
 	color:#222;
 }
 
-.jumbotron.meeting {
-	background-image: image-url("nyc-cropped.jpg");
+.jumbotron.city {
+	background-image: image-url("charlotte-cropped.jpg");
+	min-height:525px;
 }
 
 .br-custom-blue {
@@ -153,7 +166,9 @@ p.explain.front {
 }
 	
 footer { 
-	margin-top:0px;
-	margin-bottom:30px;
+	margin-top:-30px;
+	padding-bottom:30px;
+	background-color:#444;
+	color:#fff;
 }
 
