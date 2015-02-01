@@ -1,13 +1,13 @@
-<div class="outer-page">
+<div class="outer-page pic">
       
  <!-- Login page -->
  <div class="login-page">
 
     <!-- Nav tabs -->
     <ul class="nav nav-tabs nav-justified">
-      <li id="first_tab"><a href="#login" data-toggle="tab" class="br-lblue"><i class="fa fa-sign-in"></i> Sign In</a></li>
-      <li id="second_tab" class="active"><a href="#register" data-toggle="tab" class="br-lblue"><i class="fa fa-pencil"></i> Sign Up</a></li>
-      <li><a href="#contact" data-toggle="tab" class="br-lblue"><i class="fa fa-envelope"></i> Mail Us</a></li>
+      <li id="first_tab"><a href="#login" data-toggle="tab" class="br-black">Sign In</a></li>
+      <li id="second_tab" class="active"><a href="#register" data-toggle="tab" class="br-black"></i> Sign Up</a></li>
+      <li><a href="#contact" data-toggle="tab" class="br-black">Mail Us</a></li>
     </ul>
 
     <!-- Tab panes -->
@@ -32,7 +32,7 @@
         <% end -%>
 
         <div class="actions">
-          <%= f.submit "Log in", class: "btn btn-info btn-sm"%>
+          <%= f.submit "Sign In", class: "btn btn-lg br-custom-blue link-style dark"%>
         </div>
       <% end %>
       
@@ -62,7 +62,7 @@
         </div>
 
         <div class="actions">
-          <%= f.submit "Sign up", class: "btn btn-info btn-sm" %>
+          <%= f.submit "Sign up", class: "btn btn-lg br-custom-blue link-style dark" %>
         </div>
       <% end %>
       
@@ -86,8 +86,8 @@
         <label for="message">Message</label>
         <textarea rows="3" class="form-control"></textarea>
         </div>
-        <button type="submit" class="btn btn-info btn-sm">Submit</button>
-        <button type="reset" class="btn btn-default btn-sm">Reset</button>
+        <button type="submit" class="btn btn-lg br-custom-blue link-style dark">Submit</button>
+        <button type="reset" class="btn btn btn-default btn-lg link-style dark ">Reset</button>
       </form>
       
       </div>
@@ -96,3 +96,4 @@
  </div> 
       
 </div>
+
