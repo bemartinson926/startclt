@@ -13,8 +13,9 @@ class GroupsController < ApplicationController
     if Membership.where(group_id: @group.id, user_id: current_user.id).count <= 0
       @membership.save
       respond_with(@membership) do |format|
-      format.html { redirect_to user_dashboard_path(current_user), notice: "You have been added to #{@group.name}" }
+        format.html { redirect_to user_dashboard_path(current_user), notice: "You have been added to #{@group.name}" }
       end
+      GroupMailer.group_join_email(@group, current_user).deliver
     else
       redirect_to user_dashboard_path(current_user), notice: "You are already a member of #{@group.name}"
     end

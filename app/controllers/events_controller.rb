@@ -13,7 +13,7 @@ class EventsController < ApplicationController
     if Rsvp.where(event_id: event_id, user_id: current_user.id).count <= 0
       @rsvp.save
       respond_with(@rsvp) do |format|
-      format.html { redirect_to user_dashboard_path(current_user), notice: "You have RSVP'd to #{event_name}." }
+        format.html { redirect_to user_dashboard_path(current_user), notice: "You have RSVP'd to #{event_name}." }
       end
     else
       redirect_to user_dashboard_path(current_user), notice: "You have already RSVP'd to #{event_name}."
