@@ -7,22 +7,25 @@
     <div class="widget-body no-padd">
       <div class="table-responsive">
         <table class="table table-bordered">
-          <!-- Table heading -->
-          <tr> 
-            <th><input type="checkbox"></th>
-            <th>Event</th>
-            <th>Date</th>
-            <th>Location</th>
-          </tr>
-          <% current_user.groups.each do |group| %>
-            <% group.events.each do |event| %>
+          <% if current_user.rsvps.count >= 1 %>
+            <!-- Table heading -->
+            <tr> 
+              <th><input type="checkbox"></th>
+              <th>Event</th>
+              <th>Date</th>
+              <th>Location</th>
+            </tr>
+            <% current_user.rsvps.each do |rsvp| %>
+              <% event = Event.find(rsvp.event_id) %>
               <tr>
                 <td><input type="checkbox"></td><!-- Check box -->
                 <td><%= event.name %></td><!-- Event Name -->
                 <td><%= pretty_datetime(event.starts_at) %></td><!-- Date -->
                 <td><%= event.location %></td><!-- Location -->
-              </tr>
-            <% end %>    
+              </tr>  
+            <% end %>
+          <% else %>
+            <center><strong>You haven't made any RSVPs yet.</strong></center>
           <% end %>
         </table>
       </div><!--/table-responsive-->
