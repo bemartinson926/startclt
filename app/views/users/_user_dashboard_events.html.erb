@@ -19,7 +19,7 @@
               <tr>
                 <td><input type="checkbox"></td><!-- Check box -->
                 <td><%= event.name %></td><!-- Event Name -->
-                <td><%= event.starts_at %></td><!-- Date -->
+                <td><%= pretty_datetime(event.starts_at) %></td><!-- Date -->
                 <td><%= event.location %></td><!-- Location -->
               </tr>
             <% end %>    
