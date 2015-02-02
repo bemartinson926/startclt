@@ -2,8 +2,8 @@
 	<div class="container">
 		<div class="page-content">
 			<!-- Heading -->
-			<div><!--was theme class="single-head"-->
-				<h3><%= @user.first_name %>'s Profile</h3>
+			<div>
+				<h3><%= current_user.first_name || current_user.email %>'s Profile</h3>
 			</div>
 			
 			<div class="divider"></div>
