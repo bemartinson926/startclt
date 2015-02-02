@@ -16,18 +16,18 @@
       <div class="side-nav">
         
         <div class="side-nav-block">
-          <h4>Menu</h4>
+          <p class="link-style no-hov">Tasks</p>
           <ul class="list-unstyled">
-            <li style="border-bottom: 1px solid #444;"><%= link_to "Create a Group", new_group_path %></li>
+            <li class="bordered"><%= link_to "Create a Group", new_group_path, class: 'sidelink' %></li>
             
-            <li><%= link_to 'My Events', user_events_path(current_user) %></li>
+            <li class="bordered"><%= link_to 'My Events', user_events_path(current_user), class: 'sidelink' %></li>
           </ul>
         </div>
         
         <div class="side-nav-block">
-          <h4>Other</h4>
+          <p class="link-style no-hov">Other</p>
           <ul class="list-unstyled">
-            <li><%= link_to "Popular Groups", popular_groups_path %></li>
+            <li class="bordered"><%= link_to "Popular Groups", popular_groups_path, class: 'sidelink' %></li>
           </ul>
         </div>
         

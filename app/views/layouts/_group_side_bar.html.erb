@@ -11,14 +11,14 @@
       <!-- Sidebar navigation starts -->
       
       <!-- Responsive dropdown -->
-      <div class="sidebar-dropdown"><a href="#" class="br-red"><i class="fa fa-bars"></i>Menu</a></div>
+      <div class="sidebar-dropdown"><a href="#" class="br-black"><i class="fa fa-bars"></i>Tasks</a></div>
       
       <div class="side-nav">
         
         <div class="side-nav-block">
-          <h4>Menu</h4>
+          <p class="link-style no-hov">Tasks</p>
           <ul class="list-unstyled">
-            <li>New Group</li>
+            <li class="bordered blue"><%=link_to 'Create a Group', new_group_path, class: 'lightlink' %></li>
             
           </ul>
         </div>

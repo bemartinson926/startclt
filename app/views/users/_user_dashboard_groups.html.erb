@@ -1,8 +1,10 @@
+
+
 <div class="col-md-7">
   <!-- Pages widget -->
   <div class="widget pages-widget">
     
-    <div class="widget-head br-custom-blue">
+    <div class="widget-head br-black">
       <h2 class="link-style no-hov">Your Groups</h2>
     </div>
     
@@ -22,7 +24,7 @@
               <td><input type="checkbox"></td>
               <td><%= link_to "#{group.name}", group_info_path(group) %></td>
               <td><%= group.memberships.count %></td>
-              <td><span class="badge badge-danger">R</span></td>
+              <td><span class="badge badge-success">Member</span></td>
             </tr>
           <% end %>
         </table>
