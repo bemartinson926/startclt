@@ -16,6 +16,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  def upcoming_events
+    Event.from_group(self.groups).upcoming.most_recent    
+  end
+
+  
 	private
   	def prep_email
   		self.email = self.email.strip.downcase if self.email
