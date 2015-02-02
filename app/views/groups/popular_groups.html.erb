@@ -1,20 +1,26 @@
 <div class="main-content">
 	<div class="container">
-						
-		<div class="page-content">
-		
-			<!-- Heading -->
-			<div class="single-head">
-				<!-- Heading -->
-				<h3 class="pull-left">Popular STARTCLT Groups</h3>
-				<div class="clearfix"></div>
-			</div>
-		
-		<% @groups.each do |group| %>
-			<p><%= link_to "#{group.name}", group_info_path(group) %></p>
-		<% end %>
-			
+		<div>
+			<h3>Popular STARTCLT Groups</h3>
 		</div>
+			
+		<div class="divider"></div>
 		
+		<div class="">
+			<div class="page-content">
+				<table class="table table-hover">
+					<thead class="br-black">
+						<td class="white">GROUP NAME</td>
+						<td class="text-center white">MEMBERS</td>
+						<td class="text-center white">DATE CREATED</td>
+					</thead>
+						<tr><% @groups.each do |group| %></tr>
+							<td><%= link_to "#{group.name}", group_info_path(group) %></td>
+							<td class="text-center"><%= group.memberships.count %></td> 
+							<td class="text-center"><%= group.created_at.strftime("%b %d, %Y") %></td>
+						<% end %>
+				</table>
+			</div>
+		</div>
 	</div>
 </div>
