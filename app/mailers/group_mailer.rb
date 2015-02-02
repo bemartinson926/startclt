@@ -10,6 +10,6 @@ class GroupMailer < ActionMailer::Base
   def group_join_email(group, user)
     @group = group
     @user = user
-    mail(to: @user.email, subject: "Thanks for joining the group!", template_path: 'mailers/group_mailer')
+    mail(to: @user.email, subject: "Thanks for joining #{@group.name}!", template_path: 'mailers/group_mailer')
   end
 end
