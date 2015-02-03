@@ -1,26 +1,25 @@
 <div class="main-content">
 	<div class="container">
 		<div>
-			<h3><%= current_user.first_name || current_user.email %>'s Upcoming Events:</h3>
-			<div class="clearfix"></div>
+			<h1 class="dash-title user"><%= current_user.first_name || current_user.email %>'s Upcoming Events:</h3>
 		</div>
 			
 		<div class="divider"></div>
 		
 		<div class="">
 			<div class="page-content">
-				<table class="table table-hover">
+				<table class="table table-bordered table-hover">
 					<thead class="br-black">
 						<td class="white">EVENT</td>
-						<td class="text-center white">LOCATION</td>
-						<td class="text-center white">START TIME</td>
+						<td class="white">LOCATION</td>
+						<td class="white">START TIME</td>
 						<td class="text-center white">RSVPS</td>
 						<td class="text-center white"></td>
 					</thead>
 						<tr><% current_user.upcoming_events.each do |event| %></tr>
 							<td><%= event.name %></td>
-							<td class="text-center"><%= event.location %></td> 
-							<td class="text-center"><%= pretty_datetime(event.starts_at) %></td>
+							<td><%= event.location %></td> 
+							<td><%= pretty_datetime(event.starts_at) %></td>
 							<td class="text-center"><%= event.rsvps.count %></td>
 							<td><%= link_to "RSVP", add_rsvp_to_event_path(:rsvp_event_id => event.id, :event_name => event.name), class: "btn btn-primary pull-right", method: "post" %></td>
 						<% end %>

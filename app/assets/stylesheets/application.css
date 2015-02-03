@@ -21,6 +21,7 @@
  *= require 'less-style'
  #= require 'groups'
  *= require 'sidebars'
+ *= require 'users'
 
 
  */
