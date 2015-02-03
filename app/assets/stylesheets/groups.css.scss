@@ -1,3 +1,25 @@
 // Place all the styles related to the Groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.dash-title.group {
+	color:#444;
+	padding-top:5px;
+	font-family: FjallaOne-Regular,"Helvetica Neue", Helvetica,Arial,sans-serif;
+}
+
+.link-style.dark {
+	color:#080808;
+}
+
+.divider.dark {
+	background-color:#555;
+}
+
+.fa.fa-chevron-right, .fa.fa-envelope {
+	color:#444;
+}
+
+.fa.fa-envelope {
+	margin-top:25%;
+}
