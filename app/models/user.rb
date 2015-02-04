@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  def upcoming_events
+  def upcoming_group_events
     Event.from_group(self.groups).upcoming.most_recent    
   end
 
