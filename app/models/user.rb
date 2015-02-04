@@ -20,6 +20,16 @@ class User < ActiveRecord::Base
     Event.from_group(self.groups).upcoming.most_recent    
   end
 
+  def upcoming_rsvp_events
+    events = []
+    self.rsvps.each do |rsvp|
+      event = Event.find(rsvp.event_id)
+      if !event.in_past?
+        events << event
+      end
+    end
+    events
+  end
   
 	private
   	def prep_email
