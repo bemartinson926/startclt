@@ -41,18 +41,21 @@ font-style: normal;
 	color:#FBEC5D;
 }
 
-.link-style.dark {
-	color:#080808;
-}
-
 .link-style.no-hov {
 	color:#fff;
 }
 
-/*.br-white:hover {
-	background-color:#C2DCF2;
-	border: 1px solid #e1edf2;
-}*/
+.link-style.dark {
+	color:#555;
+}
+
+.link-style.dark:hover {
+	color:#F5F5F5;
+}
+
+.link-style.dark.no-hov {
+	color:#555;
+}
 
 #welcome { display:inline-block; }
 

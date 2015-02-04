@@ -3,7 +3,7 @@
 		<div class="page-content">
 			<!-- Heading -->
 			<div>
-				<h3><%= current_user.first_name || current_user.email %>'s Profile</h3>
+				<h1 class="dash-title user"><%= current_user.first_name || current_user.email %>'s Profile</h1>
 			</div>
 			
 			<div class="divider"></div>
@@ -30,7 +30,7 @@
 				<div class="row">
 					<div class="col-sm-9 col-sm-offset-3">
 						<% if @user.id == current_user.id %>
-							<%= link_to 'Edit Profile', edit_registration_path(@user), class: 'btn btn-lg btn-default' %>
+							<%= link_to 'Edit Profile', edit_registration_path(@user), class: 'btn btn-lg br-custom-blue link-style dark' %>
 						<% end %>
 					</div>
 				</div><!--/row-->

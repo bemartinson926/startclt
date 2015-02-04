@@ -15,8 +15,7 @@
               <th>Date</th>
               <th>Location</th>
             </tr>
-            <% current_user.rsvps.each do |rsvp| %>
-              <% event = Event.find(rsvp.event_id) %>
+            <% current_user.upcoming_rsvp_events.each do |event| %>
               <tr>
                 <td><input type="checkbox"></td><!-- Check box -->
                 <td><%= event.name %></td><!-- Event Name -->
