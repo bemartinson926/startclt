@@ -21,14 +21,7 @@ class User < ActiveRecord::Base
   end
 
   def upcoming_rsvp_events
-    events = []
-    self.rsvps.each do |rsvp|
-      event = Event.find(rsvp.event_id)
-      if !event.in_past?
-        events << event
-      end
-    end
-    events
+    self.events.reject {|event| event.in_past?}
   end
   
 	private
