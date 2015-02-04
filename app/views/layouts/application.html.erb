@@ -17,8 +17,14 @@
       <%= yield %>
     <% else %>
       <div class="outer">
-      <%= render 'layouts/sidenav' %>
-      <%= render 'layouts/topnav' %>
+        <%= render 'layouts/sidenav' %>
+
+        <div class="mainbar">
+          <%= render 'layouts/topnav' %>
+          <%= render 'layouts/messages' %>
+
+          <%= yield %>
+        </div>
       </div>      
     <% end %>
 
