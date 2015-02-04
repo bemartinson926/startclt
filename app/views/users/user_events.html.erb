@@ -10,13 +10,15 @@
 			<div class="page-content">
 				<table class="table table-bordered table-hover">
 					<thead class="br-black">
+						<td class="white">GROUP</td>
 						<td class="white">EVENT</td>
 						<td class="white">LOCATION</td>
 						<td class="white">START TIME</td>
 						<td class="text-center white">RSVPS</td>
 						<td class="text-center white"></td>
 					</thead>
-						<tr><% current_user.upcoming_events.each do |event| %></tr>
+						<tr><% current_user.upcoming_group_events.each do |event| %></tr>
+							<td><%= event.group.name %></td>
 							<td><%= event.name %></td>
 							<td><%= event.location %></td> 
 							<td><%= pretty_datetime(event.starts_at) %></td>
