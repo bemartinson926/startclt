@@ -44,17 +44,13 @@ class GroupsController < ApplicationController
     @groups = Group.all
   end
 
-  def group_info
-    @events = @group.events.all
-    respond_with(@group)
-  end
-  
   # def index
   #   @groups = Group.all
   #   respond_with(@groups)
   # end
 
   def show
+    @events = @group.events.all
     respond_with(@group)
   end
 

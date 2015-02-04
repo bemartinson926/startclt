@@ -15,7 +15,7 @@
 						<td class="text-center white">DATE CREATED</td>
 					</thead>
 						<tr><% @groups.each do |group| %></tr>
-							<td><%= link_to "#{group.name}", group_info_path(group) %></td>
+							<td><%= link_to group.name, group_path(group) %></td>
 							<td class="text-center"><%= group.memberships.count %></td> 
 							<td class="text-center"><%= group.created_at.strftime("%b %d, %Y") %></td>
 						<% end %>
