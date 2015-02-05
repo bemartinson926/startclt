@@ -11,10 +11,11 @@ class UsersController < ApplicationController
   def user_events
   end
 
-  def user_profile
-  end
+  # def user_profile
+  # end
 
   def show
+    render 'user_profile'
   end
 
   private
