@@ -1,5 +1,4 @@
-<% if controller_name == 'users' || current_page?(new_group_path) ||
-                                    current_page?(popular_groups_path) %>
+<% if controller_name == 'users' || controller_name == 'registrations' || current_page?(new_group_path) || current_page?(popular_groups_path) %>
 
 	<%= render 'layouts/user_side_bar' %>
 
