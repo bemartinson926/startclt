@@ -13,19 +13,19 @@
   </head>
   <body>
     
-    <% if current_page?(root_path) || current_page?(new_user_registration_path) || current_page?(new_user_session_path) || current_page?(first_group_path)%>
+    <% if !user_signed_in? || current_page?(root_path) || current_page?(new_user_registration_path) || current_page?(new_user_session_path) || current_page?(first_group_path) %>
+      <%= render 'layouts/messages' %>
+
       <%= yield %>
     <% else %>
       <div class="outer">
         <%= render 'layouts/sidenav' %>
-
         <div class="mainbar">
           <%= render 'layouts/topnav' %>
           <%= render 'layouts/messages' %>
-
           <%= yield %>
         </div>
-      </div>      
+      </div>
     <% end %>
 
   </body>

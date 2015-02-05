@@ -1,4 +1,4 @@
-<div class="col-md-5">
+<div class="col-sm-6">
   <div class="widget pages-widget">
     <div class="widget-head br-black">
       <h2 class="link-style no-hov">Your Events</h2>
@@ -10,14 +10,12 @@
           <% if current_user.rsvps.count >= 1 %>
             <!-- Table heading -->
             <tr> 
-              <th><input type="checkbox"></th>
-              <th>Event</th>
+              <th>Event Title</th>
               <th>Date</th>
               <th>Location</th>
             </tr>
             <% current_user.upcoming_rsvp_events.each do |event| %>
               <tr>
-                <td><input type="checkbox"></td><!-- Check box -->
                 <td><%= event.name %></td><!-- Event Name -->
                 <td><%= pretty_datetime(event.starts_at) %></td><!-- Date -->
                 <td><%= event.location %></td><!-- Location -->
@@ -31,8 +29,8 @@
     </div><!--/widget-body-->
 
     <div class="widget-foot">
-      <span class="pull-left">2 Events</span>
-      <a href="#" class="btn btn-sm pull-right br-white">Add New Event</a>
+      <h3 class="pull-left"><%= current_user.events.count %> Event(s)</h3>
+      <%= link_to 'Add New Event', user_events_path, class: 'btn br-custom-blue  sub-button pull-right' %>
       <div class="clearfix"></div>
     </div><!-- /widget foot -->
     
