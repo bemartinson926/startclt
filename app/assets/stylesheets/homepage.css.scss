@@ -31,7 +31,7 @@ font-style: normal;
 
 .link-style {
 	text-transform:uppercase;
-	font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size:18px;
 	color:#fff;
 	margin-right:20px;
@@ -45,7 +45,7 @@ font-style: normal;
 	color:#fff;
 }
 
-.link-style.dark {
+.link-style.dark, .link-style.dark.no-hov {
 	color:#555;
 }
 
@@ -53,15 +53,25 @@ font-style: normal;
 	color:#F5F5F5;
 }
 
-.link-style.dark.no-hov {
-	color:#555;
-}
-
 #welcome { display:inline-block; }
 
 #header { 
 	position:relative; 
 	bottom:78px;
+}
+
+.logo {
+	font-family: FjallaOne-Regular,"Helvetica Neue", Helvetica,Arial,sans-serif;
+	font-size:30px;
+	color:#c2dcf2;
+	font-weight:500;
+	position:absolute;
+	top:15px;
+	left:0px;
+	z-index:3;
+	background-color:#445975;
+	background-color:#636261;
+	padding:15px 15px 15px 25px;
 }
 
 #header img { width:100%; }
@@ -135,10 +145,10 @@ font-style: normal;
 	background-image: image-url("clipboard.jpg");
 	background-image: image-url("desk-cropped.jpg");
 	width:90%;
-	min-height:450px;
+	min-height:500px;
 }
 
-.container.feature.room{
+.container.feature.rsvp {
 	background-image: image-url("big-window.jpg");
 	background-image: image-url("badges-warm.jpg");
 	width:90%;
@@ -146,7 +156,7 @@ font-style: normal;
 
 .backfill {
 	background-color:#fff;
-	opacity:0.7;
+	opacity:0.8;
 	border-radius:3px;
 	padding:10px;
 }
