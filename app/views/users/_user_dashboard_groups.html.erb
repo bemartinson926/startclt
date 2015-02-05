@@ -1,6 +1,6 @@
 
 
-<div class="col-md-7">
+<div class="col-sm-6">
   <!-- Pages widget -->
   <div class="widget pages-widget">
     
@@ -14,17 +14,17 @@
         <table class="table table-bordered">
           <!-- Table heading -->
           <tr> 
-            <th><input type="checkbox"></th>
-            <th>Group Name</th>
-            <th>Members</th>
-            <th>Status</th>
+            
+            <th colspan="2"><span class="spacer">Group Name</span></th>
+            <th class="text-center">Members</th>
+            <th class="text-center">Status</th>
           </tr>
           <% current_user.groups.each do |group| %>
             <tr>
-              <td><input type="checkbox"></td>
+              <td class="text-center"><input type="checkbox"></td>
 							<td><%= link_to group.name, group_path(group) %></td>
-              <td><%= group.memberships.count %></td>
-              <td><span class="badge badge-success">Member</span></td>
+              <td class="text-center"><%= group.memberships.count %></td>
+              <td class="text-center"><span class="badge badge-success">Member</span></td>
             </tr>
           <% end %>
         </table>
@@ -34,8 +34,8 @@
     
     <div class="widget-foot">
       <span class="pull-left">
-        <%= link_to 'Join Another Group', popular_groups_path, class: 'btn btn-default btn-sm' %>&nbsp; 
-        <a href="#" class="btn btn-danger btn-sm">Delete All</a>
+        <%= link_to 'Join Another Group', popular_groups_path, class: 'btn br-custom-blue sub-button' %>&nbsp; 
+        <a href="#" class="btn btn-default sub-button">Leave This Group</a>
       </span>
       <div class="pull-right">
         <!-- Pagination -->
