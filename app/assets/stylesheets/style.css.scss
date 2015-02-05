@@ -385,8 +385,8 @@ form label{
 
 .sidebar .logo{
 	padding:15px;
-	border-bottom:1px solid #444;
-	text-shadow:0px 0px 2px #222;
+	border-bottom:1px solid #666;
+	font-family:FjallaOne-Regular,"Helvetica Neue", Helvetica,Arial,sans-serif;
 }
 
 .sidebar .logo h1{
@@ -398,6 +398,7 @@ form label{
 
 .sidebar .logo h1 a{
 	color:#fff;
+	font-size:24px;
 }
 
 .sidebar .logo h1 a i{
@@ -418,13 +419,13 @@ form label{
 
 .sidebar .logo h1 span{
 	display:block;
-	font-size:11px;
+	font-size:16px;
 	text-transform:none;
-	letter-spacing:0em;
+	letter-spacing:0.1em;
 	color:#aaa;
-	margin-left:43px;
+	margin-left:14px;
 	position:relative;
-	top:-7px;
+	
 	font-weight:normal;
 }
 
