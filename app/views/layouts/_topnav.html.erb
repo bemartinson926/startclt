@@ -1,31 +1,26 @@
-<!-- Mainbar head starts -->
-<div class="main-head">
+<div class="main-head"><!-- Mainbar head starts -->
   <div class="container">
     <div class="row">
       <div class="col-sm-7 col-xs-6">
-      <!-- Page title -->
-        <h2><%= link_to "#{@group.name}", group_dashboard_path(@group) rescue "" %></h2>
+        <h2><%= link_to "#{@group.name}", group_dashboard_path(@group) rescue "" %></h2><!-- Page title -->
       </div>
     
       <div class="col-sm-4 hidden-sm hidden-xs">
-      <!-- Head user -->
-        <div class="head-user dropdown pull-right">
+        <div class="head-user dropdown pull-right"><!-- Head user -->
           <a href="#" data-toggle="dropdown" id="profile">
             <% if current_user %>
-              <!-- User Name -->
-              <% if current_user.first_name && current_user.last_name %>
+              <% if current_user.first_name && current_user.last_name %><!-- User Name -->
                 <%= "#{current_user.first_name} #{current_user.last_name}" %>
               <% else %>
                 <%= "#{current_user.email}" %>
               <% end %>
-              <!-- User image -->
-              <img src='<%= current_user.avatar_url %>' alt="" class="img-responsive img-circle">
+              <img src='<%= current_user.avatar_url %>' alt="" class="img-responsive img-circle"><!-- User image -->
             <% end %>
           </a>
-          <!-- Dropdown -->
-          <ul class="dropdown-menu" aria-labelledby="profile">
+          
+          <ul class="dropdown-menu" aria-labelledby="profile"><!-- Dropdown -->
             <li><%= link_to 'View Profile', user_profile_path(current_user) %></li>
-              <li><%= link_to 'Dashboard', user_dashboard_path(current_user) %></li>
+            <li><%= link_to 'Dashboard', user_dashboard_path(current_user) %></li>
             <li class="divider"></li>
             <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
           </ul>
@@ -34,6 +29,4 @@
       </div>
     </div>	
   </div>
-</div>
-<!-- Mainbar head ends -->
-
+</div><!-- Mainbar head ends -->
