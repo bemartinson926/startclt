@@ -1,40 +1,28 @@
-<!-- Sidebar starts -->
-  <div class="sidebar">
-  
-    <div class="sidey">
-  
-      <!-- Logo -->
-      <div class="logo">
-        <h1><a href="/dashboard/user/<%= current_user.slug %>">Start CLT <span>Get Together</span></a></h1>
-      </div>
-      
-      <!-- Sidebar navigation starts -->
-      
-      <!-- Responsive dropdown -->
-      <div class="sidebar-dropdown"><a href="#" class="br-red"><i class="fa fa-bars"></i>Menu</a></div>
-      
-      <div class="side-nav">
-        
-        <div class="side-nav-block">
-          <p class="link-style no-hov">Tasks</p>
-          <ul class="list-unstyled">
-            <li class="bordered"><%= link_to "Create a Group", new_group_path, class: 'sidelink' %></li>
-
-          </ul>
-        </div>
-        
-        <div class="side-nav-block">
-          <p class="link-style no-hov">Other</p>
-          <ul class="list-unstyled">
-            <li class="bordered"><%= link_to "Popular Groups", popular_groups_path, class: 'sidelink' %></li>
-            <li class="bordered"><%= link_to 'Upcoming Events', user_events_path(current_user), class: 'sidelink' %></li>
-          </ul>
-        </div>
-        
-      </div>
-      
-      <!-- Sidebar navigation ends -->
-      
+<div class="sidebar"><!-- Sidebar starts -->
+  <div class="sidey">
+    <div class="logo"><!-- Logo -->
+      <h1><%= link_to 'Start CLT', user_dashboard_path(current_user) %></h1>
     </div>
+
+    <!-- Responsive dropdown -->
+    <div class="sidebar-dropdown"><a href="#" class="br-red"><i class="fa fa-bars"></i>Menu</a></div>
+    
+    <div class="side-nav"><!-- Sidebar navigation starts -->
+      <div class="side-nav-block">
+        <p class="link-style no-hov">Tasks</p>
+        <ul class="list-unstyled">
+          <li class="bordered"><%= link_to "Create a Group", new_group_path, class: 'sidelink' %></li>
+        </ul>
+      </div>
+      
+      <div class="side-nav-block">
+        <p class="link-style no-hov">Other</p>
+        <ul class="list-unstyled">
+          <li class="bordered"><%= link_to "Popular Groups", popular_groups_path, class: 'sidelink' %></li>
+          <li class="bordered"><%= link_to 'Suggested Events', user_events_path(current_user), class: 'sidelink' %></li>
+        </ul>
+      </div>
+    </div><!-- Sidebar navigation ends -->
+    
   </div>
-<!-- Sidebar ends -->
+</div><!-- Sidebar ends -->

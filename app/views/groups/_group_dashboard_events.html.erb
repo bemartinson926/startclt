@@ -17,7 +17,7 @@
           <% @group.events.each do |event| %>
             <tr>
               <td><input type="checkbox"></td><!-- Check box -->
-              <td><%= event.name %></td><!-- Event Name -->
+              <td><%= link_to event.name, group_event_path(event.group_id, event.id) %></td><!-- Event Name -->
               <td><%= pretty_datetime(event.starts_at) %></td><!-- Date -->
               <td><%= event.location %></td><!-- Location -->
             </tr>
@@ -28,7 +28,8 @@
     
     <div class="widget-foot">
       <span class="pull-left">
-        <a href="#" class="btn btn-default btn-sm">Add New Event</a> &nbsp; 
+        <%= link_to 'Add Event', new_group_event_path(@group), class: "btn btn-default btn-sm" %>
+        
         <a href="#" class="btn btn-danger btn-sm">Delete All</a>
       </span>
       <div class="pull-right">

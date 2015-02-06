@@ -37,6 +37,7 @@ class GroupsController < ApplicationController
   end
 
   def group_dashboard
+    @group ||= Group.find(params[:id])
     respond_with(@group)
   end
 

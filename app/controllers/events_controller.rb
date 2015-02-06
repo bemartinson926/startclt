@@ -26,26 +26,33 @@ class EventsController < ApplicationController
   end
 
   def show
+    @event = Event.find(params[:id])
     respond_with(@event)
   end
 
   def new
-    @event = Event.new
+    @group = Group.find_by(slug: params[:group_id])
+    @event = Event.new(group: @group)
     respond_with(@event)
   end
 
   def edit
+    @group = Group.find(params[:group_id])
+    @event = Event.find(params[:id])
   end
 
   def create
     @event = Event.new(event_params)
+    @group = Group.find_by(slug: params[:group_id])
     @event.save
-    respond_with(@event)
+    # respond_with(@event)
+    redirect_to @group
   end
 
   def update
     @event.update(event_params)
-    respond_with(@event)
+    redirect_to group_event_path(@group.id, @event.id)
+    # respond_with(@event)
   end
 
   def destroy
