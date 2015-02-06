@@ -22,9 +22,9 @@
           <% current_user.groups.each do |group| %>
             <tr>
               <td class="text-center"><input type="checkbox"></td>
-							<td><%= link_to group.name, group_path(group) %></td>
+							<td><%= link_to group.name, group_path(group, @user) %></td>
               <td class="text-center"><%= group.memberships.count %></td>
-              <td class="text-center"><span class="badge badge-success">Member</span></td>
+              <td class="text-center"><span class="badge badge-success"><%= @user.user_membership_role_at_group_join(group, @user).upcase %></span></td>
             </tr>
           <% end %>
         </table>

@@ -12,6 +12,7 @@ class GroupsController < ApplicationController
     @membership[:group_id] = @group.id
     if Membership.where(group_id: @group.id, user_id: current_user.id).count <= 0
       @membership.save
+      MembershipRole.new(membership_id: @membership.id, role: 0).save!
       respond_with(@membership) do |format|
         format.html { redirect_to user_dashboard_path(current_user), notice: "You have been added to #{@group.name}" }
       end
