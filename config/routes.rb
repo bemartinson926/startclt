@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   get '/users/:id/profile', to: 'users#show', as: 'user_profile'
   get '/users/:id/dashboard', to: 'users#user_dashboard', as: 'user_dashboard'
+  get '/users/:id/events', to: 'users#user_events', as: 'user_events'
 
   # get '/dashboard/user/:id', to: 'users#user_dashboard', as: 'user_dashboard'
   # get '/dashboard/user/:id/groups', to: 'users#user_groups', as: 'user_groups'
