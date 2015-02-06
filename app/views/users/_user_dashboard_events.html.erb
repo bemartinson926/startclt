@@ -13,12 +13,20 @@
               <th>Event Title</th>
               <th>Date</th>
               <th>Location</th>
+              <th>RSVP</th>
             </tr>
-            <% current_user.upcoming_rsvp_events.each do |event| %>
+            <% current_user.events.each do |event| %>
               <tr>
                 <td><%= event.name %></td><!-- Event Name -->
                 <td><%= pretty_datetime(event.starts_at) %></td><!-- Date -->
                 <td><%= event.location %></td><!-- Location -->
+                <td>
+                  <% if event.rsvps.present? %>
+                    <%= "Yes" %>
+                  <% else %>
+                    <%= "RSVP" %>
+                  <% end %>
+                </td>
               </tr>  
             <% end %>
           <% else %>
