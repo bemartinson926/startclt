@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   post 'add_user_to_group/:id' => 'groups#add_user_to_group', as: 'add_user_to_group'
   post 'add_rsvp_to_event/:id' => 'events#add_rsvp_to_event', as: 'add_rsvp_to_event'
+  delete 'remove_user_from_group/:id' => 'groups#remove_user_from_group', as: 'remove_user_from_group'
 
   # get '/dashboard/group/:id/invite', to: 'groups#group_invite', as: 'group_invite'
   # get '/dashboard/group/:id/events', to: 'groups#group_events', as: 'group_events'

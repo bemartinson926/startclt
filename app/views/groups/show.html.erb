@@ -11,8 +11,14 @@
 			
 			<p><%= @group.description %></p>
 			
-			<%= form_tag add_user_to_group_path(@group) do %>
-				<button type="submit" class="btn btn-lg btn-primary">Join This Group</button>
+			<% if !current_user.groups.include?(@group) %>
+				<%= form_tag add_user_to_group_path(@group) do %>
+					<button type="submit" class="btn btn-lg btn-primary">Join This Group</button>
+				<% end %>
+			<% else %>
+				<%= form_tag remove_user_from_group_path(@group) do %>
+					<%= link_to "Leave This Group", {:action => "remove_user_from_group"}, class: "btn btn-xs btn-danger", method: "delete", data: { confirm: "Are you sure?" } %>
+				<% end %>
 			<% end %>
 		</div>
 	</div>

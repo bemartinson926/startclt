@@ -22,6 +22,15 @@ class GroupsController < ApplicationController
     end
   end
 
+  def remove_user_from_group
+    membership = current_user.memberships.find_by_group_id(@group.id)
+    roles = membership.membership_roles
+    roles.delete_all
+    membership.destroy
+    current_user.save!
+    redirect_to user_dashboard_path(current_user), notice: "You are no longer a member of #{@group.name}."
+  end
+
   def group_events
     @events = @group.events.all
   end
