@@ -6,20 +6,21 @@
 			<!-- Heading for Group Info-->
 			<div class="single-head">
 				<!-- Heading -->
-				<h1 class="dash-title group">About <%= @group.name %></h1>
+				<% if !current_user.groups.include?(@group) %>
+					<%= form_tag add_user_to_group_path(@group) do %>
+						<h1 class="dash-title group">About <%= @group.name %>
+							<button type="submit" class="btn btn-lg btn-primary pull-right">Join This Group</button></h1>
+					<% end %>
+				<% else %>
+					<%= form_tag remove_user_from_group_path(@group) do %>
+						<h1 class="dash-title group">About <%= @group.name %>
+							<%= link_to "Leave This Group", {:action => "remove_user_from_group"}, class: "btn btn-xs btn-danger pull-right", method: "delete", data: { confirm: "Are you sure?" } %></h1>
+					<% end %>
+				<% end %>
 			</div>
 			
 			<p><%= @group.description %></p>
-			
-			<% if !current_user.groups.include?(@group) %>
-				<%= form_tag add_user_to_group_path(@group) do %>
-					<button type="submit" class="btn btn-lg btn-primary">Join This Group</button>
-				<% end %>
-			<% else %>
-				<%= form_tag remove_user_from_group_path(@group) do %>
-					<%= link_to "Leave This Group", {:action => "remove_user_from_group"}, class: "btn btn-xs btn-danger", method: "delete", data: { confirm: "Are you sure?" } %>
-				<% end %>
-			<% end %>
+
 		</div>
 	</div>
 
@@ -31,23 +32,19 @@
 			<!-- Heading for Group Events-->
 			<div class="single-head">
 				<!-- Heading -->
-				<h2 class="dash-title group"><%= @group.name %> Events:</h2>
-				
+				<h1 class="dash-title group"><%= @group.name %> Events:</h1>
 			</div>
 
 			<% @events.each do |event| %>
-				<p>
-					<%= event.name %>
-					<%= link_to "RSVP", add_rsvp_to_event_path(:rsvp_event_id => event.id, :event_name => event.name), class: "btn btn-primary pull-right", method: "post" %>
-					<div class="clearfix"></div>
-				</p>
-
+				<h2><%= event.name %>
+				<% if current_user.events.include?(event) %>
+					<em class="pull-right" style="color:limegreen">Attending</em></h2>
+				<% else %>
+					<%= link_to "RSVP", add_rsvp_to_event_path(:rsvp_event_id => event.id, :event_name => event.name), class: "btn btn-primary pull-right", method: "post" %></h2>
+				<% end %>
 				<p><%= event.description %></p>
+				<hr>
 			<% end %>
-
-
-			
 		</div>
-		
 	</div>
 </div>
