@@ -46,7 +46,6 @@ class EventsController < ApplicationController
     @group = Group.find_by(slug: params[:group_id])
     @event = Event.new(event_params)
     @event.group_id = @group.id
-    binding.pry
     @event.save
     # respond_with(@event)
     redirect_to @group, notice: "New event successfully created."
