@@ -1,7 +1,7 @@
 <div class="col-sm-6">
   <div class="widget pages-widget">
     <div class="widget-head br-black">
-      <h2 class="link-style no-hov">Events You're attending</h2>
+      <h2 class="link-style no-hov">Events You Are Attending</h2>
     </div>
 
     <div class="widget-body no-padd">
@@ -38,7 +38,7 @@
 
     <div class="widget-foot">
       <h3 class="pull-left"><%= current_user.events.count %> Event(s)</h3>
-      <%= link_to 'Browse Events For Your Groups', user_events_path , class: 'btn btn-sm pull-right br-white' %>
+      <%= link_to 'Recommended Events', user_events_path , class: 'btn br-lgreen sub-button pull-right' %>
       <div class="clearfix"></div>
     </div><!-- /widget foot -->
     
