@@ -19,7 +19,7 @@
               <td><input type="checkbox"></td><!-- Check box -->
               <td><%= link_to event.name, group_event_path(@group, event) %></td><!-- Event Name -->
               <td><%= pretty_datetime(event.starts_at) %></td><!-- Date -->
-              <td><%= event.location %></td><!-- Location -->
+              <td><%= event.address %></td><!-- Location -->
             </tr>
           <% end %>
         </table>

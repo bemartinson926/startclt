@@ -19,7 +19,7 @@
               <tr>
                 <td><%= event.name %></td><!-- Event Name -->
                 <td><%= pretty_datetime(event.starts_at) %></td><!-- Date -->
-                <td><%= event.location %></td><!-- Location -->
+                <td><%= event.address %></td><!-- Location -->
                 <td>
                   <% if event.rsvps.present? %>
                     <%= "Yes" %>

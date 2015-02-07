@@ -32,7 +32,7 @@ mat = User.find_by(email: "matbanbury@gmail.com") ||
     ev = Event.create(name: Faker::Lorem.words(5).join(" "), 
                       group: g,
                       description: Faker::Hacker.say_something_smart,
-                      location: Faker::Address.street_address,
+                      address: Faker::Address.street_address,
                       starts_at: starts_at,
                       ends_at: ends_at
                       )
