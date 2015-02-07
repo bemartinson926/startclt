@@ -17,7 +17,7 @@
           <% @group.events.each do |event| %>
             <tr>
               <td><input type="checkbox"></td><!-- Check box -->
-              <td><%= link_to event.name, group_event_path(event.group_id, event.id) %></td><!-- Event Name -->
+              <td><%= link_to event.name, group_event_path(@group, event) %></td><!-- Event Name -->
               <td><%= pretty_datetime(event.starts_at) %></td><!-- Date -->
               <td><%= event.location %></td><!-- Location -->
             </tr>

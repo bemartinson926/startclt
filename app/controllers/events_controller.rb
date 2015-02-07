@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_models, only: [:index, :show, :edit, :update, :destroy, :group_events, :add_rsvp_to_event]
+  before_action :set_models, only: [:index, :destroy, :group_events, :add_rsvp_to_event]
 
   respond_to :html
 
@@ -26,7 +26,8 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @group = Group.find_by slug: params[:group_id]
+    @event = Event.find_by slug: params[:id]
     respond_with(@event)
   end
 
@@ -37,8 +38,8 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:group_id])
-    @event = Event.find(params[:id])
+    @group = Group.find_by slug: params[:group_id]
+    @event = Event.find_by slug: params[:id]
   end
 
   def create
@@ -50,8 +51,10 @@ class EventsController < ApplicationController
   end
 
   def update
+    @event = Event.find_by slug: params[:id]
+    @group = Group.find_by slug: params[:group_id]
     @event.update(event_params)
-    redirect_to group_event_path(@group.id, @event.id)
+    redirect_to group_dashboard_path(@group), notice: "Event information successfully updated."
     # respond_with(@event)
   end
 
@@ -60,9 +63,9 @@ class EventsController < ApplicationController
     respond_with(@event)
   end
 
-  def group_events
-    @events = @group.events.all
-  end
+  # def group_events
+  #   @events = @group.events.all
+  # end
 
   private
     def set_models
@@ -71,7 +74,7 @@ class EventsController < ApplicationController
     end
 
     def set_group
-      @group = Group.find_by slug: params[:group_id]
+      @group = Group.find_by slug: params[:id]
     end
 
     def set_event
