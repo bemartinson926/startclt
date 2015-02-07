@@ -12,6 +12,7 @@ class GroupsController < ApplicationController
     @membership[:group_id] = @group.id
     if Membership.where(group_id: @group.id, user_id: current_user.id).count <= 0
       @membership.save
+      MembershipRole.new(membership_id: @membership.id, role: 0).save!
       respond_with(@membership) do |format|
         format.html { redirect_to user_dashboard_path(current_user), notice: "You have been added to #{@group.name}" }
       end
@@ -19,6 +20,15 @@ class GroupsController < ApplicationController
     else
       redirect_to user_dashboard_path(current_user), notice: "You are already a member of #{@group.name}"
     end
+  end
+
+  def remove_user_from_group
+    membership = current_user.memberships.find_by_group_id(@group.id)
+    roles = membership.membership_roles
+    roles.delete_all
+    membership.destroy
+    current_user.save!
+    redirect_to user_dashboard_path(current_user), notice: "You are no longer a member of #{@group.name}."
   end
 
   def group_events

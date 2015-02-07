@@ -22,7 +22,7 @@
               <div class="contact-details">
                 <!-- Contact name and number -->
                 <div class="pull-left">
-                  <strong><%= user.first_name || user.email %></strong>
+                  <strong><%= link_to user.first_name || user.email, user_profile_path(user) %></strong>
                   <small><%= user.phone_number || "Phone Number" %></small>
                 </div>
                 <!-- Call, Message and Email buttons -->
