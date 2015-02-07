@@ -12,6 +12,10 @@
 	color:#080808;
 }
 
+.link-style.join:hover {
+	color:#26466D;
+}
+
 .divider.dark {
 	background-color:#555;
 }
@@ -27,4 +31,28 @@
 .groups-background {
 	background-color:#6183A6;
 	height:100vh;
+}
+
+.divider {
+	height:4px;
+	background-color:#999;
+}
+
+.btn.br-dark-blue:hover {
+	color:#999;
+	color:#93BCE6;
+}
+
+.event-name, .group-name {
+	padding-bottom:10px;
+}
+
+.attending {
+	color:limegreen;
+	text-transform:uppercase;
+	margin-top:30px;
+}
+
+.vert-cent {
+	margin-top:15px;
 }
