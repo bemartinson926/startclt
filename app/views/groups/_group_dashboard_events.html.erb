@@ -28,21 +28,11 @@
     
     <div class="widget-foot">
       <span class="pull-left">
-        <%= link_to 'Add Event', new_group_event_path(@group), class: "btn btn-default btn-sm" %>
+        <%= link_to 'Create an Event', new_group_event_path(@group), class: "btn br-dark-blue sub-button create" %>
         
-        <a href="#" class="btn btn-danger btn-sm">Delete All</a>
+        <a href="#" class="btn btn-default sub-button">Delete This Event</a>
       </span>
-      <div class="pull-right">
-        <!-- Pagination -->
-        <ul class="pagination">
-            <li><a href="#">&laquo;</a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">&raquo;</a></li>
-        </ul>
-      </div>
+      
       <div class="clearfix"></div>
     </div><!-- /widget foot -->
 
