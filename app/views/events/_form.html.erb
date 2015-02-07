@@ -12,9 +12,11 @@
     </div>
   <% end %>
 
+<!-- This shouldn't allow an event to be changed to another group
   <div class="field">
     <%= f.collection_select :group_id, Group.all, :id, :name %>
   </div>
+ -->
   <div class="field">
     <%= f.text_field :name %>
   </div>
