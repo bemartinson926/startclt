@@ -48,6 +48,7 @@ gem "bootstrap_form"
 gem "kaminari"
 gem "foreigner"
 gem "rolify"
+gem "geocoder"
 group :development, :test do
   gem "rspec-rails"
   gem "guard-rspec"

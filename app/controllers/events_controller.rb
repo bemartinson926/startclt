@@ -83,7 +83,7 @@ class EventsController < ApplicationController
     end
 
     def event_params
-      params.require(:event).permit(:group_id, :name, :description, :location, :starts_at, :ends_at)
+      params.require(:event).permit(:group_id, :name, :description, :location, :starts_at, :ends_at, :address, :latitude, :longitude)
     end
 
     # def rsvp_params

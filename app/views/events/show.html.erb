@@ -30,5 +30,15 @@
   <%= @event.ends_at %>
 </p>
 
+<% if @event.address.present? %>
+  <p>
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}" %>
+  </p>
+<% else %>
+  <p>
+    <%= @event.name %><%= " does not have a location specified yet." %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_group_event_path %> |
 <%= link_to 'Back', group_dashboard_path(@group) %>

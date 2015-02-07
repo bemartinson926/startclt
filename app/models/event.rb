@@ -8,6 +8,9 @@ class Event < ActiveRecord::Base
 
   validates :name, presence: true
 
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
+
   # true, false
   def in_past?
     starts_at < Time.now 
