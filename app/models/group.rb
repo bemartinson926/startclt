@@ -12,6 +12,15 @@ class Group < ActiveRecord::Base
 
   after_save :set_membership
 
+  
+  def upcoming_events
+    self.events.reject { |event| event.in_past? }
+  end
+
+  def past_events
+    self.events.reject { |event| !event.in_past? }
+  end
+
   private
 
     def set_membership
