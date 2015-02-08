@@ -23,6 +23,7 @@
  *= require 'sidebars'
  *= require 'users'
  *= require 'events'
+ *= require 'welcome'
 
 
  */

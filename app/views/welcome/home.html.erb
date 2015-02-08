@@ -2,28 +2,31 @@
 
 <div class="navbar text-right">
   <p class="home-logo">Start Charlotte</p>
+
+  <div class="nav_item">
+      <%=link_to 'Meet Our Team', about_path, class: 'link-style' %>
+  </div>
+
   <% if current_user %>
     <div class="nav_item">
-      <p id="welcome">Welcome, <%= current_user.first_name %></p>
+      <p id="welcome">Welcome, <%= current_user.email %></p>
     </div>
+    
     <div class="nav_item">
-    <!--NOTE: change/reference all button colors in less.css.scss file-->
-      <!--<button type="button" class="btn btn-lg ">--><%=link_to 'Sign Out', destroy_user_session_path, class: 'link-style', method: :delete %><!-- </button> -->
+    <%=link_to 'Sign Out', destroy_user_session_path, class: 'link-style', method: :delete %>
     </div>
+  
   <% else %>
     <div class="nav_item">
-    <!--<button type="button" class="btn btn-lg br-white">-->
-        <%=link_to 'Sign In', new_user_session_path, class: 'link-style' %>
-      <!-- </button> -->
+      <%=link_to 'Sign In', new_user_session_path, class: 'link-style' %>
+    </div>  
       
     <div class="nav_item">
-      <!--<button type="button" class="btn btn-lg br-white">-->
       <%=link_to 'Sign Up', new_user_registration_path, class: 'link-style' %>
-     <!-- </button> -->
     </div>
-    </div>
+    
   <% end %>
-</div>
+</div><!--/navbar-->
 
 <div id="header">
   <%= image_tag 'city-meeting1450cropped.jpg', class: 'img-responsive' %>

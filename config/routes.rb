@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'welcome#home'
+  get '/about', to: 'welcome#about'
 
   post 'add_user_to_group/:id' => 'groups#add_user_to_group', as: 'add_user_to_group'
   post 'add_rsvp_to_event/:id' => 'events#add_rsvp_to_event', as: 'add_rsvp_to_event'
