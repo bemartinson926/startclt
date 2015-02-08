@@ -31,29 +31,64 @@
 			<h2 class="dash-title group"><%= @group.name %> Events:</h2>
 		</div>
 
-		<br />
-			
-		<% @events.each do |event| %>
-			<table class="table table-default">
-				<tr>
-					<td><h3 class="event-name"><strong><%= event.name %></strong></h3>
-					<p><%= event.description %></p>
-					<br />
+		<br>
+
+		<ul class='nav nav-tabs'>
+		  <li class="<%= 'active' if params[:tab].nil? %>">
+		    <%= link_to "Upcoming Events (#{@group.upcoming_events.count})", group_path(@group) %>
+		  </li>
+		  <li class="<%= 'active' if params[:tab] == 'past' %>">
+		    <%= link_to "Past Events (#{@group.past_events.count})", group_path(@group, tab: 'past') %>
+		  </li>
+		</ul>
+
+		<br>
+
+		<% if params[:tab].nil? %>
+		  <% @group.upcoming_events.each do |event| %>
+				<table class="table table-default">
+					<tr>
+						<td>
+							<h3 class="event-name"><strong><%= event.name %></strong></h3>
+							<p><%= event.description %></p>
+							<br>
+							<p><strong>When: &nbsp;</strong><%= pretty_datetime(event.starts_at) %></p>
+							<p><strong>Where: </strong><%= event.location %></p>
+						</td>
 					
-					<p><strong>When: &nbsp;</strong><%= pretty_datetime(event.starts_at) %>
-					</p>
-					<p><strong>Where: </strong><%= event.location %></p>
-					</td>
-				
-					<td><% if current_user.events.include?(event) %>
-						<h3 class="attending pull-right">Attending</h3>
-						<% else %>
-						<h3><%= link_to "RSVP", add_rsvp_to_event_path(:rsvp_event_id => event.id, :event_name => event.name), class: "btn br-dark-blue link-style vert-cent pull-right", method: "post" %></h3>
-						<% end %>
-					</td>
-				  <% end %>
-				</tr>
-			</table>
+						<td>
+							<% if current_user.events.include?(event) %>
+								<h3 class="attending pull-right">Attending</h3>
+							<% else %>
+								<h3><%= link_to "RSVP", add_rsvp_to_event_path(:rsvp_event_id => event.id, :event_name => event.name), class: "btn br-dark-blue link-style vert-cent pull-right", method: "post" %></h3>
+							<% end %>
+						</td>
+					</tr>
+				</table>
+		  <% end %>
+
+		<% elsif params[:tab] == 'past' %>
+		  <% @group.past_events.each do |event| %>
+				<table class="table table-default">
+					<tr>
+						<td>
+							<h3 class="event-name"><strong><%= event.name %></strong></h3>
+							<p><%= event.description %></p>
+							<br>
+							<p><strong>When: &nbsp;</strong><%= pretty_datetime(event.starts_at) %></p>
+							<p><strong>Where: </strong><%= event.location %></p>
+						</td>
+					
+						<td>
+							<% if current_user.events.include?(event) %>
+								<h3 class="attending pull-right">Attended</h3>
+							<% end %>
+						</td>
+					</tr>
+				</table>
+		  <% end %>
+		<% end %>
+			
 		</div><!--/page-content-->
 	</div><!--/container-->
 </div><!--/main-content-->
