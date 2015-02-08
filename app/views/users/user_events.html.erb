@@ -20,7 +20,7 @@
 						<tr><% current_user.upcoming_group_events.each do |event| %></tr>
 							<td><%= event.group.name %></td>
 							<td><%= event.name %></td>
-							<td><%= event.location %></td> 
+							<td><%= event.address %></td> 
 							<td><%= pretty_datetime(event.starts_at) %></td>
 							<td class="text-center"><%= event.rsvps.count %></td>
 							<td><%= link_to "RSVP", add_rsvp_to_event_path(:rsvp_event_id => event.id, :event_name => event.name), class: "btn br-lgreen link-style dark pull-right", method: "post" %></td>
