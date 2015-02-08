@@ -29,6 +29,17 @@ sharon = User.find_by(email: "sharonhunter@email.com") ||
                      phone_number: "704-123-4567"
                      )
 
+blake = User.find_by(email: "blake.martinson@gmail.com") || 
+          User.create(email: "blake.martinson@gmail.com", 
+                     password: "password",
+                     first_name: "Blake",
+                     last_name: "Martinson",
+                     city: "Charlotte",
+                     state: "NC",
+                     bio: "This bio is all about me.",
+                     phone_number: "704-123-4567"
+                     )
+
 # These Groups added manually, not sure how to combine these with rest of file!
 
 Group.create(name:'Charlotte UX', description:'Charlotte UX is for anybody interested in learning more about creating a great user experience. 
