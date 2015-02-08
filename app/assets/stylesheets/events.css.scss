@@ -1,3 +1,20 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.event-info {
+	margin:5px;
+}
+
+.org-name {
+	font-family:FjallaOne-Regular,"Helvetica Neue", Helvetica,Arial,sans-serif;
+	text-transform:uppercase;
+	margin-top:14px;
+	color:#6183A6;
+}
+
+.map {
+	height:300px;
+	margin:25px 0px;
+}
+
