@@ -27,20 +27,15 @@
 	<br />
 
 	<div class="page-content">
-		<div>
-			<h2 class="dash-title group"><%= @group.name %> Events:</h2>
-		</div>
 
-		<br>
-
-		<ul class='nav nav-tabs'>
-		  <li class="<%= 'active' if params[:tab].nil? %>">
-		    <%= link_to "Upcoming Events (#{@group.upcoming_events.count})", group_path(@group) %>
-		  </li>
-		  <li class="<%= 'active' if params[:tab] == 'past' %>">
-		    <%= link_to "Past Events (#{@group.past_events.count})", group_path(@group, tab: 'past') %>
-		  </li>
-		</ul>
+			<ul class="nav nav-tabs">
+			  <li class="<%= 'active' if params[:tab].nil? %>">
+			    <%= link_to "Upcoming Events (#{@group.upcoming_events.count})", group_path(@group) %>
+			  </li>
+			  <li class="<%= 'active' if params[:tab] == 'past' %>">
+			    <%= link_to "Past Events (#{@group.past_events.count})", group_path(@group, tab: 'past') %>
+			  </li>
+			</ul>
 
 		<br>
 

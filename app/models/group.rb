@@ -14,11 +14,13 @@ class Group < ActiveRecord::Base
 
   
   def upcoming_events
-    self.events.reject { |event| event.in_past? }
+    Event.from_group(self).upcoming.most_recent
+    # self.events.reject { |event| event.in_past? }
   end
 
   def past_events
-    self.events.reject { |event| !event.in_past? }
+    Event.from_group(self).most_recent.reverse
+    # self.events.reject { |event| !event.in_past? }
   end
 
   private
