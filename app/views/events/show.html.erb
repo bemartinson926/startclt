@@ -46,18 +46,35 @@
                 </div>
             </div><!--/row-->
 
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-2">                
-                    <% if @event.address.present? %>
-                      <p class="map">
-                        <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}" %>
-                      </p>
-                    <% else %>
-                      <p>
-                        <%= @event.name %><%= " does not have a location specified yet." %>
-                      </p>
-                    <% end %>
-            </div><!--/row-->
+            <% if @event.address.present? %>
+              <div class="row">
+                <div class="col-sm-2 col-xs-2">
+                  <p class="event-info"><strong>Address: </strong></p>
+                </div>
+                
+                <div class="col-sm-8">
+                  <p class="event-info"><%= @event.address %></p>
+                </div>
+              </div><!--/row-->
+
+              <div class="col-sm-6 col-sm-offset-2">                
+                <p class="map">
+                  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}" %>
+                </p>
+              </div><!--/row-->
+
+            <% else %>
+
+              <div class="row">
+                <div class="col-sm-2 col-xs-2">
+                  <p class="event-info"><strong>Address: </strong></p>
+                </div>
+                
+                <div class="col-sm-8">
+                  <p class="event-info"><%= @event.name %><%= " does not have a location specified yet." %></p>
+                </div>
+              </div><!--/row-->
+            <% end %>
 
             <div class="row">
               <div class="col-sm-10 col-sm-offset-2">
