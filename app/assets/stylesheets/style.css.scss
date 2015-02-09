@@ -384,8 +384,9 @@ form label{
 /* Sidebar logo */
 
 .sidebar .logo{
+	height:61px;
 	padding:15px;
-	border-bottom:1px solid #666;
+	border-bottom:1px solid #aaa;
 	font-family:FjallaOne-Regular,"Helvetica Neue", Helvetica,Arial,sans-serif;
 }
 
@@ -470,9 +471,9 @@ form label{
 
 .sidebar .side-nav ul li{
 	font-weight:bold;
-	font-size:12px;
-	padding-top:3px;
-	padding-bottom:3px;
+	font-size:13px;
+	padding-top:8px;
+	padding-bottom:8px;
 	line-height: 24px;
 }
 
@@ -558,9 +559,10 @@ form label{
 }
 
 .main-head h2{
-	font-size:13px;
+	font-size:16px;
 	line-height:30px;
 	font-weight:bold;
+	margin-left:2%;
 }
 
 .main-head h2 i{
@@ -773,7 +775,7 @@ form label{
 /* Head user */
 
 .main-head .head-user{
-	font-size:13px;
+	font-size:16px;
 	line-height:28px;
 	font-weight:bold;
 }
@@ -828,6 +830,7 @@ form label{
 	color:#bbb;
 	padding:8px 10px;
     white-space: normal;
+    font-size:18px;
 }
 
 .main-head .head-user .dropdown-menu li a:hover{

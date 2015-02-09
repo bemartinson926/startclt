@@ -2,10 +2,10 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-7 col-xs-6">
-        <h2><%= link_to "#{@group.name} Admin Page", group_dashboard_path(@group) rescue "" %></h2><!-- Page title -->
+        <h2><%= link_to "#{@group.name} Admin Area", group_dashboard_path(@group) rescue "" %></h2><!-- Page title -->
       </div>
     
-      <div class="col-sm-4 hidden-sm hidden-xs">
+      <div class="col-sm-4 col-sm-offset-1 hidden-xs">
         <div class="head-user dropdown pull-right"><!-- Head user -->
           <a href="#" data-toggle="dropdown" id="profile">
             <% if current_user %>
@@ -19,10 +19,10 @@
           </a>
           
           <ul class="dropdown-menu" aria-labelledby="profile"><!-- Dropdown -->
-            <li><%= link_to 'View Profile', user_profile_path(current_user) %></li>
-            <li><%= link_to 'Dashboard', user_dashboard_path(current_user) %></li>
+            <li><%= link_to 'View Profile', user_profile_path(current_user), class:'drop-style'%></li>
+            <li><%= link_to 'Dashboard', user_dashboard_path(current_user), class:'drop-style'%></li>
             <li class="divider"></li>
-            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to 'Sign Out', destroy_user_session_path, class:'drop-style',method: :delete %></li>
           </ul>
         </div>
         <div class="clearfix"></div>
