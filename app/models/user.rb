@@ -17,7 +17,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def upcoming_group_events
-    Event.from_group(self.groups).upcoming.most_recent    
+    events = Event.from_group(self.groups).upcoming.most_recent
+    events = events.reject { |event| self.events.include? event }
   end
 
   def upcoming_rsvp_events

@@ -17,7 +17,7 @@
 						<td class="text-center white">RSVPS</td>
 						<td class="text-center white"></td>
 					</thead>
-						<tr><% current_user.upcoming_group_events.each do |event| %></tr>
+						<tr><% @events.each do |event| %></tr>
 							<td><%= event.group.name %></td>
 							<td><%= event.name %></td>
 							<td><%= event.address %></td> 

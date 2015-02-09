@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def user_events
+    @events = current_user.upcoming_group_events
   end
 
   # def user_profile
