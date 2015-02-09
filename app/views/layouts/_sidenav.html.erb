@@ -1,9 +1,1 @@
-<% if controller_name == 'users' || controller_name == 'registrations' || current_page?(new_group_path) || current_page?(popular_groups_path) %>
-
-	<%= render 'layouts/user_side_bar' %>
-
-<% elsif controller_name == 'groups' || controller_name == 'events' %>
-
-	<%= render 'layouts/group_side_bar' %>
-
-<% end %>
+<%= render 'layouts/user_side_bar' %>
