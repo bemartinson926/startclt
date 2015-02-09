@@ -1,0 +1,19 @@
+<div class="main-content">
+    <div class="container">
+      <div class="page-content">
+        <div>
+            <h1 class="dash-title group">Choose a group for your new event:</h1>
+          </div>
+        
+          <div class="divider"></div>
+
+          <div class="well well-lg">
+            <% @groups.each do |group| %>
+              <p>
+                <strong><u><%= link_to group.name, new_group_event_path(group), class: "link-style-dark" %></u></strong>
+              </p>
+            <% end %>
+          </div><!--/well well-lg-->
+       </div><!--/page-content-->
+    </div><!--/container-->
+</div><!--/main-content-->

@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get '/groups/:id/dashboard', to: 'groups#group_dashboard', as: 'group_dashboard'
   get '/popular_groups', to: 'groups#popular_groups', as: 'popular_groups'
 
+  get '/events/new_event', to: 'events#new_event_from_nav', as: 'new_event_from_nav'
+
   resources :groups, except: [:index] do
     resources :events
   end

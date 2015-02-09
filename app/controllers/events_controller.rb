@@ -20,6 +20,10 @@ class EventsController < ApplicationController
     end
   end
 
+  def new_event_from_nav
+    @groups = current_user.organizer_groups
+  end
+
   def index
     @events = @group.events.all
     respond_with(@events)

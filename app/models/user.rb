@@ -16,6 +16,18 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  def organizer?(group)
+    membership = group.memberships.find_by(user_id: self.id)
+    membership.membership_roles.each do |r|
+      return true if r.role == "organizer"
+    end
+    false
+  end
+
+  def organizer_groups
+    self.groups.reject { |group| !self.organizer?(group) }
+  end
+
   def upcoming_group_events
     events = Event.from_group(self.groups).upcoming.most_recent
     events = events.reject { |event| self.events.include? event }

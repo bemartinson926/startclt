@@ -12,7 +12,6 @@ class Group < ActiveRecord::Base
 
   after_save :set_membership
 
-  
   def upcoming_events
     Event.from_group(self).upcoming.most_recent
     # self.events.reject { |event| event.in_past? }
