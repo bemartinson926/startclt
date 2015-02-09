@@ -17,7 +17,7 @@
             </tr>
             <% @events.each do |event| %>
               <tr>
-                <td><strong><%= link_to event.name, group_event_path(event.group, event), class: "link-style-dark" %></strong></td><!-- Event Name -->
+                <td><strong><%= link_to event.name, group_event_path(event.group, event), class: "lightblue" %></strong></td><!-- Event Name -->
                 <td><%= pretty_datetime(event.starts_at) %></td><!-- Date -->
                 <td><%= event.address %></td><!-- Location -->
                 <td>
