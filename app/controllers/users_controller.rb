@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   
   def user_dashboard
+    @events = current_user.events.order("starts_at")
+    @events = @events.reject { |event| event.in_past? }
   end
 
   def user_groups

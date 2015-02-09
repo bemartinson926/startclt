@@ -21,10 +21,6 @@ class User < ActiveRecord::Base
     events = events.reject { |event| self.events.include? event }
   end
 
-  def upcoming_rsvp_events
-    self.events.reject {|event| event.in_past?}
-  end
-
   def user_membership_role_at_group_join(group, user)
     membership = group.memberships.find_by(user_id: user.id)
     return membership_role = membership.membership_roles.first.role

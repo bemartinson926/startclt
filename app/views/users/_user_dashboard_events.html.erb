@@ -13,16 +13,16 @@
               <th>Event Title</th>
               <th>Date</th>
               <th>Location</th>
-              <th>RSVP</th>
+              <th>RSVPs</th>
             </tr>
-            <% current_user.events.each do |event| %>
+            <% @events.each do |event| %>
               <tr>
                 <td><%= event.name %></td><!-- Event Name -->
                 <td><%= pretty_datetime(event.starts_at) %></td><!-- Date -->
                 <td><%= event.address %></td><!-- Location -->
                 <td>
                   <% if event.rsvps.present? %>
-                    <%= "Yes" %>
+                    <center><strong><%= event.rsvps.count %></strong></center>
                   <% else %>
                     <%= "RSVP" %>
                   <% end %>
@@ -37,7 +37,7 @@
     </div><!--/widget-body-->
 
     <div class="widget-foot">
-      <h3 class="pull-left"><%= current_user.events.count %> Event(s)</h3>
+      <h3 class="pull-left"><%= @events.count %> Event(s)</h3>
       <%= link_to 'Recommended Events', user_events_path , class: 'btn br-lgreen sub-button pull-right' %>
       <div class="clearfix"></div>
     </div><!-- /widget foot -->
