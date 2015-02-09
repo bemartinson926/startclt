@@ -69,3 +69,4 @@ group :test do
 end
 
 gem "pg"
+gem 'rails_12factor'
