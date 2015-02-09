@@ -21,6 +21,7 @@
         <ul class="list-unstyled">
           <li class="bordered"><%= link_to "Popular Groups", popular_groups_path, class: 'sidelink' %></li>
           <li class="bordered"><%= link_to 'Suggested Events', user_events_path(current_user), class: 'sidelink' %></li>
+          <li class="bordered"><%= link_to 'Your Profile', user_profile_path(current_user), class: 'sidelink' %></li>
         </ul>
       </div>
     </div><!-- Sidebar navigation ends -->
