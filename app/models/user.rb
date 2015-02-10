@@ -16,6 +16,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  def member_of(group)
+    self.groups.include? group
+  end
+
   def organizer?(group)
     membership = group.memberships.find_by(user_id: self.id)
     membership.membership_roles.each do |r|

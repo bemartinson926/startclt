@@ -83,7 +83,7 @@
             
             <div class="row">
               <div class="col-sm-10 col-sm-offset-2">
-                <% if current_user.organizer?(@event.group) %>
+                <% if current_user.member_of(@event.group) && current_user.organizer?(@event.group) %>
                   <%= link_to 'Edit This Event', edit_group_event_path, class: 'btn btn-default sub-button' %>
                   <%= link_to 'Back to Dashboard', group_dashboard_path(@group), class: 'btn btn-default sub-button' %>
                 <% else %>
