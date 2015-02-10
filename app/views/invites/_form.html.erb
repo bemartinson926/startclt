@@ -1,0 +1,18 @@
+<%= bootstrap_form_for(@invite, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-7") do |f| %>
+
+  <div class="field">
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.text_area :message %>
+  </div>
+  <div class="col-sm-offset-2">
+    <div class="actions">
+      <%= f.submit 'Submit', class:'btn btn-lg link-style dark br-custom-blue'%>
+    </div>
+  </div>
+<% end %>
+</div>

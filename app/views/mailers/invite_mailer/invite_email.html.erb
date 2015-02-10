@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= @invite.name || @invite.email %>, You were invited by: <%= @user.first_name || @user.email %>!</h1>
+   <p>Below is a message from <%= @user.first_name || @user.email %>:</p>
+    <p>
+      <%= @invite.message %><br>
+    </p>
+    <p>
+      To login to the site, just follow this link: https://start-clt.herokuapp.com
+    </p>
+
+    <p>Thanks and have a great day!</p>
+  </body>
+</html>
