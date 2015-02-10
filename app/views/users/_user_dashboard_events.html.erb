@@ -37,7 +37,7 @@
     </div><!--/widget-body-->
 
     <div class="widget-foot">
-      <h3 class="pull-left"><%= @events.count %> Event(s)</h3>
+      <h3 class="pull-left"><%= @events.count %> <%= "Event".pluralize(@events.count) %></h3>
       <%= link_to 'Recommended Events', user_events_path , class: 'btn br-lgreen sub-button pull-right' %>
       <div class="clearfix"></div>
     </div><!-- /widget foot -->

@@ -38,7 +38,7 @@
     </div><!--/widget-body-scroll-->
     
     <div class="widget-foot">
-      <h4 class="pull-left">1 Member(s)</h4>
+      <h4 class="pull-left"><%= @group.users.size %> <%= "Member".pluralize(@group.users.size) %></h4>
       <a href="#" class="btn br-lgreen sub-button pull-right">Add New Member</a>
       <div class="clearfix"></div>
     </div>
