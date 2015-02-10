@@ -1,7 +1,7 @@
 <div class="col-md-7">
   <div class="widget pages-widget"><!-- Pages widget -->
     <div class="widget-head br-custom-blue">
-      <h2 class="link-style dark">Scheduled Events</h2>
+      <h2 class="table-title">Scheduled Events</h2>
     </div>
     
     <div class="widget-body no-padd">
@@ -9,14 +9,14 @@
         <table class="table table-bordered">
           <!-- Table heading -->
           <tr> 
-            <th><input type="checkbox"></th>
+            <!--<th><input type="checkbox"></th>-->
             <th>Event</th>
             <th>Date</th>
             <th>Location</th>
           </tr>
           <% @group.events.each do |event| %>
             <tr>
-              <td><input type="checkbox"></td><!-- Check box -->
+              <!--<td><input type="checkbox"></td>--><!-- Check box -->
               <td><%= link_to event.name, group_event_path(@group, event) %></td><!-- Event Name -->
               <td><%= pretty_datetime(event.starts_at) %></td><!-- Date -->
               <td><%= event.address %></td><!-- Location -->
@@ -30,7 +30,7 @@
       <span class="pull-left">
         <%= link_to 'Create an Event', new_group_event_path(@group), class: "btn br-dark-blue sub-button create" %>
         
-        <a href="#" class="btn btn-default sub-button">Delete This Event</a>
+        <!--<a href="#" class="btn btn-default sub-button">Delete This Event</a>-->
       </span>
       
       <div class="clearfix"></div>
