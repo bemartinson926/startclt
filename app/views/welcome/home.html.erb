@@ -4,7 +4,7 @@
   <p class="home-logo">Start Charlotte</p>
 
   <div class="nav_item">
-      <%=link_to 'Meet Our Team', about_path, class: 'link-style' %>
+      <%=link_to 'Meet Our Team', about_path, target: '_blank', class: 'link-style' %>
   </div>
 
   <% if current_user %>
@@ -146,9 +146,7 @@
             <div class="panel-body text-center">
               Create as many groups and host as many events as you need, always free!      
               <hr>
-                <button type="button" class="btn btn-lg btn-block br-custom-blue">
-                   <%= link_to 'Sign Up', new_user_registration_path, class: 'link-style dark' %>
-                </button>
+                <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-lg btn-block br-custom-blue link-style dark' %>
             </div>
           </div>
         </div>
