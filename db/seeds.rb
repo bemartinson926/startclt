@@ -77,8 +77,8 @@ josh = User.find_by(email: "joshholingsworth@mac.com") ||
                      phone_number: "704-123-4567"
                      )
 
-jim =  User.find_by(email: "guest@startclt.com") || 
-          User.create(email: "guest@startclt.com", 
+jim =  User.find_by(email: "guest@startc.lt") || 
+          User.create(email: "guest@startc.lt", 
                      password: "password",
                      first_name: "Example",
                      last_name: "User",
