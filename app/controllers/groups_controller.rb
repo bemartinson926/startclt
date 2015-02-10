@@ -61,7 +61,8 @@ class GroupsController < ApplicationController
   # end
 
   def show
-    @events = @group.events.all
+    @upcoming_events = @group.upcoming_events.sort_by &:starts_at
+    @past_events = @group.past_events.sort_by(&:starts_at).reverse
     respond_with(@group)
   end
 

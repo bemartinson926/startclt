@@ -18,8 +18,8 @@ class Group < ActiveRecord::Base
   end
 
   def past_events
-    Event.from_group(self).most_recent.reverse
-    # self.events.reject { |event| !event.in_past? }
+    # Event.from_group(self).most_recent.reverse
+    self.events.reject { |event| !event.in_past? }
   end
 
   private

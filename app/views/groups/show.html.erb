@@ -40,7 +40,7 @@
 		<br>
 
 		<% if params[:tab].nil? %>
-		  <% @group.upcoming_events.each do |event| %>
+		  <% @upcoming_events.each do |event| %>
 				<table class="table table-default">
 					<tr>
 						<td>
@@ -59,7 +59,7 @@
 		  <% end %>
 
 		<% elsif params[:tab] == 'past' %>
-		  <% @group.past_events.each do |event| %>
+		  <% @past_events.each do |event| %>
 				<table class="table table-default">
 					<tr>
 						<td>
