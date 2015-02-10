@@ -1,7 +1,7 @@
 <div class="col-sm-6">
   <div class="widget pages-widget">
     <div class="widget-head br-black">
-      <h2 class="link-style no-hov">Events You Are Attending</h2>
+      <h2 class="link-style no-hov"><%= @events.count %> <%= "Event".pluralize(@events.count) %> You Are Attending</h2>
     </div>
 
     <div class="widget-body no-padd">
@@ -37,8 +37,7 @@
     </div><!--/widget-body-->
 
     <div class="widget-foot">
-      <h3 class="pull-left"><%= @events.count %> <%= "Event".pluralize(@events.count) %></h3>
-      <%= link_to 'Recommended Events', user_events_path , class: 'btn br-lgreen sub-button pull-right' %>
+      <%= link_to 'Recommended Events', user_events_path , class: 'btn br-lgreen sub-button pull-left' %>
       <div class="clearfix"></div>
     </div><!-- /widget foot -->
     
