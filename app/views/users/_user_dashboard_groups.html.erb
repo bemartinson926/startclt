@@ -24,7 +24,13 @@
               <!--<td class="text-center"><input type="checkbox"></td>-->
 							<td><%= link_to group.name, group_path(group) %></td>
               <td class="text-center"><%= group.memberships.count %></td>
-              <td class="text-center"><span class="badge badge-success"><%= @user.user_membership_role_at_group_join(group, @user).upcase rescue "" %></span></td>
+              <% if @user.role(group) %>
+                <% if @user.role(group) == "member" %>
+                  <td class="text-center"><span class="badge badge-success"><%= @user.role(group).upcase %></span></td>
+                <% else %>
+                  <td class="text-center"><span class="badge badge-orange"><strong><%= @user.role(group).upcase %></strong></span></td>
+                <% end %>
+              <% end %>
             </tr>
           <% end %>
         </table>

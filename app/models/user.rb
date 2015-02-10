@@ -37,6 +37,11 @@ class User < ActiveRecord::Base
     membership = group.memberships.find_by(user_id: user.id)
     return membership_role = membership.membership_roles.first.role
   end
+
+  def role(group)
+    membership = group.memberships.find_by(user_id: self.id)
+    membership.membership_roles.first.role
+  end
   
 	private
   	def prep_email
