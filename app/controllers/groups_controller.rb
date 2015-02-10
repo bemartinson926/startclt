@@ -77,10 +77,15 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     @group[:user_id] = current_user.id
-    @group.save
-    GroupMailer.group_create_email(@group, current_user).deliver
-    respond_with(@group) do |format|
-      format.html { redirect_to group_dashboard_path(@group) }
+    if Group.find_by(name: @group.name).present?
+      flash.now[:danger] = "That group name has already been taken."
+      render 'new'
+    else
+      @group.save
+      GroupMailer.group_create_email(@group, current_user).deliver
+      respond_with(@group) do |format|
+        format.html { redirect_to group_dashboard_path(@group) }
+      end
     end
   end
 
