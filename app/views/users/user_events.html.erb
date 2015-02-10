@@ -19,11 +19,12 @@
 						<td class="text-center white"></td>
 					</thead>
 						<tr><% @events.each do |event| %></tr>
-							<td><%= link_to event.group.name, group_event_path(event.group, event) %></td>
-							<td><%= link_to event.name, group_event_path(event.group, event) %></td>
-							<td><%= link_to event.address, group_event_path(event.group, event) %></td> 
-							<td><%= link_to pretty_datetime(event.starts_at),group_event_path(event.group, event) %></td>
-							<td class="text-center"><%= link_to event.rsvps.count, group_event_path(event.group, event) %></td>
+							<% path = group_event_path(event.group, event) %>
+							<td><%= link_to event.group.name, path %></td>
+							<td><%= link_to event.name, path %></td>
+							<td><%= link_to event.address, path %></td> 
+							<td><%= link_to pretty_datetime(event.starts_at),path %></td>
+							<td class="text-center"><%= link_to event.rsvps.count, path %></td>
 							<td><%= link_to "RSVP", add_rsvp_to_event_path(:rsvp_event_id => event.id, :event_name => event.name), class: "btn br-lgreen link-style dark pull-right", method: "post" %></td>
 						<% end %>
 					<% else %>
