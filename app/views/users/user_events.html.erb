@@ -8,6 +8,7 @@
 		
 		<div class="">
 			<div class="page-content">
+				<% if @events.count > 0 %>
 				<table class="table table-bordered table-hover">
 					<thead class="br-black">
 						<td class="white">GROUP</td>
@@ -25,6 +26,9 @@
 							<td class="text-center"><%= link_to event.rsvps.count, group_event_path(event.group, event) %></td>
 							<td><%= link_to "RSVP", add_rsvp_to_event_path(:rsvp_event_id => event.id, :event_name => event.name), class: "btn br-lgreen link-style dark pull-right", method: "post" %></td>
 						<% end %>
+					<% else %>
+						<h1><%= link_to "Join a group", popular_groups_path, class: "link-style-dark blue" %> to receive recommened events.</h1>
+					<% end %>
 				</table>
 			</div>
 		</div>
