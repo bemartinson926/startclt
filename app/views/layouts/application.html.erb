@@ -12,23 +12,25 @@
   <%= csrf_meta_tags %>
   </head>
   <body>
-    
-    <% if !user_signed_in? || current_page?(root_path) || current_page?(new_user_registration_path) || current_page?(new_user_session_path) || current_page?(first_group_path) %>
-      <%= render 'layouts/messages' %>
+    <% unless current_page?(about_path) %>
+      <% if !user_signed_in? || current_page?(root_path) || current_page?(new_user_registration_path) || current_page?(new_user_session_path) || current_page?(first_group_path) %>
+        <%= render 'layouts/messages' %>
 
-      <%= yield %>
-    <% else %>
-      <div class="outer">
-        <%= render 'layouts/sidenav' %>
-        <div class="mainbar">
-          <%= render 'layouts/topnav' %>
-          <%= render 'layouts/messages' %>
-          <%= yield %>
-          <!--<%= render 'layouts/footer' %>-->
+        <%= yield %>
+      <% else %>
+        <div class="outer">
+          <%= render 'layouts/user_side_bar' %>
+          <div class="mainbar">
+            <%= render 'layouts/topnav' %>
+            <%= render 'layouts/messages' %>
+            <%= yield %>
+            <!--<%= render 'layouts/footer' %>-->
+          </div>
         </div>
-      </div>
+      <% end %>
+    <% else %>
+      <%= yield %>
     <% end %>
-
   </body>
 </html>
 
