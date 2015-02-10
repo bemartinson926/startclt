@@ -5,6 +5,7 @@ class Group < ActiveRecord::Base
   # belongs_to :user
   has_many :users, through: :memberships
   has_many :events
+  has_many :invites
 
   validates :name, presence: true, uniqueness: true
 
