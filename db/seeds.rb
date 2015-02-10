@@ -131,8 +131,28 @@ def end_time(start)
   2.hours.from_now(start)
 end
 
-def fake_address
-  Faker::Address.street_address + ", Charlotte, NC"
+# def fake_address
+#   Faker::Address.street_address + ", Charlotte, NC"
+# end
+
+def packard_place_address
+  "222 South Church Street, Charlotte, NC 28202"
+end
+
+def think_809_address
+  "809-D W Hill St, Charlotte, NC"
+end
+
+def skookum_address
+  "201 South Tryon Street, Charlotte, NC 28202"
+end
+
+def myjive_address
+  "1000 NC Music Factory Boulevard, Charlotte, NC 28206"
+end
+
+def select_address
+  [packard_place_address, think_809_address, skookum_address, myjive_address].sample
 end
 
 puts "Creating 10 events per group..."
@@ -167,7 +187,7 @@ Schedule:
 • 6:30 - 7:00 Network and Food
 
 • 7:00 - 8:00 Talk/Session",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -198,7 +218,7 @@ Schedule:
 
 • 6:30 - 7:00 Network and food 
 • 7:00 - 8:30 Session/Presentation",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -211,7 +231,7 @@ g1_e2 = Event.create(name: "Web Afternoon + Annual Charlotte Tech Meetups Holida
                      description: "Join us for an afternoon for people who love the web over at Wells Fargo Auditorium from 1-6pm. After the mini-conference Packard Place will be hosting our annual holiday tech party for all of our local meetup groups.
 
 You can find details and registration at http://charlotte.webafternoon.com/",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -231,7 +251,7 @@ Whether you know all about SVG, or are just starting to dip your toes in the wat
 • Animation Techniques with SVG 
 • Clever SVG Uses and Examples 
 • SVG Resources list",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -252,7 +272,7 @@ Registration begins at 9am. Lunch will be provided from 1-2pm.
 • 2:00pm - Interaction Design Lessons Literally from the Future by Nathan Shedroff, Serial Entrepreneur, Experience Designer, Business Strategist 
 • 3:00pm - Expanding our Expectations of ‘Everyone’ by Margot Bloomstein, Author of Content Strategy at Work 
 • 4:00pm - UX: The First 50 Years by Jesse James Garrett, Author of The Elements of User Experience ",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -275,7 +295,7 @@ We'll post topics as they come in. Here's what we have so far:
 • Bermon Painter, 5 UX Activities to Create Collaborative Meetings
 
 • Nate Ernst, No one knows where they are: context and design",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -291,7 +311,7 @@ There are some amazing speakers coming into town, including Mike Monteiro, Chris
 
 I encourage you to attend and support a local Charlotte conference. Day passes for Thursday, Friday or Saturday are available. 
 Don't miss out. Go register for Blend Conference.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -312,7 +332,7 @@ Attendees will discover:
 • difficulties that exist when integrating user experience and Agile 
 
 • ways to improve integrating user experience in an Agile setting",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -325,7 +345,7 @@ g1_e8 = Event.create(name: "CRUX (Cryptography + User Experience)",
                      description: "Justin Troutman joins us to explore the progression of cryptographic failure as a result of the poor interfacing of cryptographic concepts to consumers. CRUX, or cryptography plus user experience, is based on the premise that real-world cryptography is not about cryptography at all; it's about product design — therefore, UX-driven. In order for cryptography to be beneficial, the surface for interfacing it must be benign and approachable, making it hard to get wrong, and easy to get right.
 
 Justin Troutman is a cryptographer-for-hire who believes that realizing the cypherpunk dream depends on finding the sweet spot between a tactile, palatable user experience and consistently airtight OPSEC. His research interests include building and breaking authenticated encryption designs, analyzing HUMINT/SIGINT methodologies, and, now, seeing CRUX through to fruition. He also has the likely distinction of sporting the strongest Southern drawl of any cryptographer in history.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -336,7 +356,7 @@ ends_at = end_time(starts_at)
 g1_e9 = Event.create(name: "More Than UI: How the Brand Plays a Role in the User Experience",
                      group_id: g1.id,
                      description: "For years, branding and user experience design seem to be a discipline mixture more reminiscent of oil and water than peanut butter and jelly. However, the need for companies to communicate their values, messages, personality and products in a multi-channel yet consistent experience makes the line between branding and experience design razor thin. Touching on the intersection of marketing, service design, product design, technology, and customer/user experience, this talk will consider what the UX designer’s role could be within this landscape and whether or not we are (or should be) considering the brand experience in user experience design.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -354,7 +374,7 @@ g2_e0 = Event.create(name: "Lightning Talks",
 Let’s kick off the year sharing what we’ve been up to and what we’re interested in.
 
 We look forward to seeing you all on Thursday.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -367,7 +387,7 @@ g2_e1 = Event.create(name: "Annual Charlotte Tech Meetups Holiday Party",
                      description: "Join us along with the Ruby, PHP, Python, et cetera, et cetera meetups for our annual Christmas party. 
 RSVP at http://charlotte.webafternoon.com/. 
 Look forward to seeing you there! ",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -378,7 +398,7 @@ ends_at = end_time(starts_at)
 g2_e2 = Event.create(name: "Accessibility in JavaScript",
                      group_id: g2.id,
                      description: "Melissa Avery-Weir will be giving a presentation on making the web accessible via JavaScript. More information to come... ",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -391,7 +411,7 @@ g2_e3 = Event.create(name: "Azure Dev Camp - Charlotte",
                      description: "Note: Node.JS is supported and you can even code/deploy from Visual Studio. Come learn more.
 
 This is not necessarily JUST for devs. I would recommend this session for IT Pros, Architects, Developers and IT Executives. I'll be teaching along with a few colleagues and MVP's. Its an all day free training with food. Register with this link: http://aka.ms/clouddevcamps We are covering a TON of material from automation to analytics to the app platform to security and compliance. There will be coffee, food, snacks etc. Nov 18 9am-4:30pm",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -406,7 +426,7 @@ g2_e4 = Event.create(name: "Pizza, BYOBeverage, and Web Components",
 We’re meeting tonight! We'll have a brief presentation on web components but we're also hoping that you can participate! Come, hang out, share what you’re working on, meet some smart people!
 
 We look forward to seeing all of you! ",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -421,7 +441,7 @@ g2_e5 = Event.create(name: "TypeScript",
                      description: "Gregory Avery-Weir will be introducing us to TypeScript.
 
 TypeScript is a transcompiling superset of Javascript that brings some of the coolest features of ECMAScript Harmony to current browsers. Gregory will show how TypeScript can help you build and manage complex object-oriented web applications with examples drawn from the in-development web game Exploit: Zero Day.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -435,7 +455,7 @@ g2_e6 = Event.create(name: "PencilBlue",
 
 
 PencilBlue CTO, Brian Hyder, will give a guided tutorial of PencilBlue and how to create your first plugin for it. ",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -446,7 +466,7 @@ ends_at = end_time(starts_at)
 g2_e7 = Event.create(name: "The power of ES6",
                      group_id: g2.id,
                      description: "We’re going to learn what ES6—the next evolution of the JavaScript language—brings to the table. And how you can start using it today!",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -466,7 +486,7 @@ Todd H Gardner is an independent software developer and entrepreneur, with over 
 He is passionate about teams, communication, and quality in software and has led product teams from small businesses and major corporations.
 
 Todd is the co-founder of {Track:js}, an innovative JavaScript error logging service. He tweets at @toddhgardner.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -478,7 +498,7 @@ g2_e9 = Event.create(name: "ES6 Generators",
                      group_id: g2.id,
                      description: "Garrett Johnson will be presenting on generators: how they work and how to use them for async flow control. 
 NOTE: You can park anywhere but you need to enter the main entrance of he corporate office to find us (https://i.cloudup.com/0KGEgnipKz.jpg). If you get lost or end up in the wrong building, call[masked] for help.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -491,7 +511,7 @@ ends_at = end_time(starts_at)
 g3_e0 = Event.create(name: "The Charlotte iOS Developers Monthly Meetup",
                      group_id: g3.id,
                      description: "Peter Zignego (@pvzig) is going to take about i18n (Internationalization) of iOS apps. He's going to go over some lessons learned from working on doing this to an existing app that has tens of thousands of users.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -502,7 +522,7 @@ ends_at = end_time(starts_at)
 g3_e1 = Event.create(name: "The Charlotte iOS Developers Monthly Meetup",
                      group_id: g3.id,
                      description: "We'll try and have something posted on the topic for the Meetup a few weeks before it happens.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -513,7 +533,7 @@ ends_at = end_time(starts_at)
 g3_e2 = Event.create(name: "The Charlotte iOS Developers Monthly Meetup",
                      group_id: g3.id,
                      description: "Harish Yarlagadda is going to talk about what Cocoapods is and how to use it to in your projects.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -526,7 +546,7 @@ g3_e3 = Event.create(name: "The Charlotte iOS Developers Monthly Meetup",
                      description: "This month's talk at the Charlotte iOS Developers Meetup, Peter Malmgren is gong to talk about the fundamentals of unit testing, and how to utilize unit testing to reduce bugs in our apps and to make our code more maintainable.
 
 Topics will include the XCTest framework, asynchronous testing, mocking, and test driven development.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -537,7 +557,7 @@ ends_at = end_time(starts_at)
 g3_e4 = Event.create(name: "The Charlotte iOS Developers Monthly Meetup",
                      group_id: g3.id,
                      description: "This week we'll be talking about Swift and what it means for the future of iOS development, and then a brief demo of the language using XCode 6 and playgrounds.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -550,7 +570,7 @@ ends_at = end_time(starts_at)
 g3_e5 = Event.create(name: "The Charlotte iOS Developers Monthly Meetup",
                      group_id: g3.id,
                      description: "Networking and knowledge sharing...",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -561,7 +581,7 @@ ends_at = end_time(starts_at)
 g3_e6 = Event.create(name: "The Charlotte iOS Developers Monthly Meetup",
                      group_id: g3.id,
                      description: "Networking and knowledge sharing...yet again",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -572,7 +592,7 @@ ends_at = end_time(starts_at)
 g3_e7 = Event.create(name: "The Charlotte iOS Developers Monthly Meetup",
                      group_id: g3.id,
                      description: "Networking and knowledge sharing...",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -583,7 +603,7 @@ ends_at = end_time(starts_at)
 g3_e8 = Event.create(name: "The Charlotte iOS Developers Monthly Meetup",
                      group_id: g3.id,
                      description: "Networking and knowledge sharing...",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -594,7 +614,7 @@ ends_at = end_time(starts_at)
 g3_e9 = Event.create(name: "The Charlotte iOS Developers Monthly Meetup",
                      group_id: g3.id,
                      description: "Networking and knowledge sharing...",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -610,7 +630,7 @@ g4_e0 = Event.create(name: "Annual Charlotte Tech Meetups Holiday Party",
 
 The party is being held after a half-day Web Afternoon conference which you should definitely check out. RSVP for the Christmas party or the conference or both at http://charlotte.webafternoon.com/ 
 Food and drink will be provided.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -623,7 +643,7 @@ g4_e1 = Event.create(name: "Hack Night",
                      description: "This meetup will be an unstructured get together. Get help with something that's been stumping you. Show off your pet project. Tell everyone about the cool new thing you just learned. Pick each other's brains. Learn. Teach. 
 
 If you have any questions or suggestions feel free to reach out to me (Hans).",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -634,7 +654,7 @@ ends_at = end_time(starts_at)
 g4_e2 = Event.create(name: "Hack Night",
                      group_id: g4.id,
                      description: "This meetup will be an unstructured get together. Get help with something that's been stumping you. Show off your pet project. Tell everyone about the cool new thing you just learned. Pick each other's brains. Learn. Teach. ",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -646,7 +666,7 @@ g4_e3 = Event.create(name: "Google App Engine & Python",
                      group_id: g4.id,
                      description: "I'd like to suggest a meetup around Google App Engine using Python. I am new to GAE and have used it in small applications while learning it, and would really appreciate to find and meet people who are more savvy and use this in real life. 
 Google App Engine is a Platform as a Service (PaaS) offering that lets you build and run applications on Google’s infrastructure (more info at https://developers.google.com/appengine/)",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -659,7 +679,7 @@ g4_e4 = Event.create(name: "IPython",
                      description: "Come out and learn about IPython.Vitaly Babiy will be showing us the ropes on this handy tool. You can find out more about it here: http://ipython.org/
 
 There also may be a brief opening Python tutorial.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -674,7 +694,7 @@ g4_e5 = Event.create(name: "Intro to Pandas",
                      description: "This month Chris Widman will be giving an introduction to Pandas, a library to help you do data analysis with Python.
 
 You can read about pandas here: http://pandas.pydata.org/",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -685,7 +705,7 @@ ends_at = end_time(starts_at)
 g4_e6 = Event.create(name: "Profiling. Or, Why is my code so slow?",
                      group_id: g4.id,
                      description: "This month we'll talk about profiling your python code so that you can figure out what's taking so long.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -698,7 +718,7 @@ g4_e7 = Event.create(name: "Playing with pandas, Vincent Vega and d3",
                      description: "Generating data visualizations programmatically with pandas, vincent, vega and d3.
 
 Food and drink generously provided by TEKsystems.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -715,7 +735,7 @@ g4_e8 = Event.create(name: "Natural Language Processing with NLTK",
 2. Present applications at the next meetup. Assign next chunk. Repeat.
 
 3. Synthesize the smaller applications after finishing the book?",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -730,7 +750,7 @@ g4_e9 = Event.create(name: "CharPy September 2013: Scrapy",
 Additionally, since we had a number of people just getting started with Python at the last meeting, we'll begin the meeting with a short tutorial on a basic Python topic.
 
 Finally, short lightning talks or show-and-tell of a cool project you've found or are working on are welcome.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -753,7 +773,7 @@ Attendees will discover:
 • how to use the Gulp API
 
 • step-by-step tutorial on how to write common workflow tasks some of the best plugins currently around",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -766,7 +786,7 @@ g5_e1 = Event.create(name: "Web Afternoon + Annual Charlotte Tech Meetups Holida
                      description: "Join us for an afternoon for people who love the web over at Wells Fargo Auditorium from 1-6pm. After the mini-conference Packard Place will be hosting our annual holiday tech party for all of our local meetup groups.
 
 You can find details and registration at http://charlotte.webafternoon.com",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -785,7 +805,7 @@ Attendees will learn about:
 •  Companion libraries to Angular, such as the popular AngularUI suite which includes UI-Bootstrap
 
 A brief overview of routing options from Angular's native routing to UI Router, and how it offers flexibility for your apps",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -798,7 +818,7 @@ g5_e3 = Event.create(name: "Breaking Free from Bootstrap",
                      description: "Resources links easier to get to, adds a few new resources, & has a PDF download link for slides: http://jamessteinbach.com/css/sass/breaking-free-bootstrap/
 
 Also, quick reminder that if you're interested in a monthly Sass meetup, sign up for the email list at cltsass.com, thanks!",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -817,7 +837,7 @@ In this talk, she aims to:
 • Explain special considerations when working with SVG, and basic troubleshooting (such as bounding boxes, optimization, and responsive scaling).
 
 • Review the animatable properties of an SVG and creative ways of making the most out of its limitations.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -834,7 +854,7 @@ g5_e5 = Event.create(name: "Digging into the Grunt work of Development",
 About our Speaker
 
 Steve Evans fell in love with programming since writing programs on his TI-83 calculator back when spaghetti code was the only way to code. Since then he's learned better ways to structure code, and has found a passion in helping teams write maintainable code and sharing knowledge. Although most of his experience has been in the .NET space, he is always tinkering in other languages and paradigms to find better ways to solve problems without necessarily having to reinvent the wheel. He's given talks at user groups and conferences on topics from WCF to SOLID principals to running an Open Source project.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -845,7 +865,7 @@ ends_at = end_time(starts_at)
 g5_e6 = Event.create(name: "Test Framework Shootout: QUnit",
                      group_id: g5.id,
                      description: "Bermon joins us to wrap up our 3-week comparison with Jasmine, Mocha, and QUnit. Our focus will be discussing the ins/outs of QUnit and then a quick comparison with Jasmine and Mocha.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -856,7 +876,7 @@ ends_at = end_time(starts_at)
 g5_e7 = Event.create(name: "Test Framework Shootout: Mocha",
                      group_id: g5.id,
                      description: "Here are the slides from my talk on Mocha (and Chai): https://speakerdeck.com/vjwilson/front-end-testing-with-mocha",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -867,7 +887,7 @@ ends_at = end_time(starts_at)
 g5_e8 = Event.create(name: "Test Framework Shootout: Jasmine",
                      group_id: g5.id,
                      description: "Slides from tonights meetup. https://speakerdeck.com/bermonpainter/test-framework-shootout-jasmine",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -886,7 +906,7 @@ g5_e9 = Event.create(name: "Fostering Collaboration with Pattern Libraries",
 • how patterns can be combined to be used during rapid prototyping 
 
 • developing a consistent language that can be used between designers and developers",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -903,7 +923,7 @@ g6_e0 = Event.create(name: "The Importance of Marketing to Women",
 Join CAMA as we host this month’s Digital Marketing event at Union along with special guest speaker Valerie McMurray. McMurray is currently the principal of NorthStar Consulting Group and has 25+ years of human capital management and executive coaching experience.  
 
 Come out for a few light refreshments and learn more about the importance of women in leadership roles, how women can help businesses hit missed “targets” and how women are key players in the future of marketing. ",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -918,7 +938,7 @@ g6_e1 = Event.create(name: "Silver Bells Shindig",
 Dress in your best vintage cocktail attire and celebrate the Season of Giving with us at Automatic Slims in the NC Music Factory.
 
 Charlotte's Premier Professional Organizations have partnered with Levine Children’s Hospital for this premier event. Since you're part of this group you're welcome to join in. All members and nonmembers are invited to attend to network, enjoy appetizers and drinks, and dance with a $10 donation or Levine Children’s Hospital Wish List Item.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -931,7 +951,7 @@ g6_e2 = Event.create(name: "Magical Agency Tour | Eric Mower + Associates",
                      description: "ou don’t know what you will find on the Magical Agency Tour! Be sure to stick around because Eric Mower + Associates will be having a giveaway that you won’t want to miss!
 
 EMA is a leading independent agency specializing in B2B, consumer advertising, shopper marketing and digital/direct/relationship marketing. Eric Mower + Associates believe that building a brand in the digital age requires an entirely new approach- one that positions your brand not merely as a product or service, but as a friend. By leveraging key drivers of friendship to build affection, relevance and trust with your audiences, they can help you become a very special, very different kind of brand. The kind that people want to connect with, listen to, and make part of the way they live or do business.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -953,7 +973,7 @@ In this kick-off to the CAMA Signature Series for the year, you will:
 • Get tips on how to persuade irrational people
 
 • Learn the latest science of building & forming habits ",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -966,7 +986,7 @@ g6_e4 = Event.create(name: "Call for Volunteers - Charlotte American Marketing A
                      description: "The Charlotte American Marketing Association is hosting a call for volunteers as we kick off our new fiscal year. We'll be unveiling some key programming initiatives on how we can have more frequent meetups for the marketing community. 
 
 Our board members will also be on hand to showcase which committee roles you can participate in. ",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -983,7 +1003,7 @@ g6_e5 = Event.create(name: "Market Charlotte 2014",
 Mark your calendars! marketCHARLOTTE, an evolution of the annual Marketing Forecast, is back for its third year. This event brings together 200+ marketers, advertisers, designers, communication professionals, etc. for an evening of thought-provoking discussion and networking.
 
 Come out to hear and interact with the city's smartest thought leaders in marketing. Audience members can expect to walk away inspired with proven strategies to consider applying to their own organization's growth.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -997,7 +1017,7 @@ g6_e6 = Event.create(name: "Social Storytelling with BuzzFeed",
 Brands have such amazing stories to tell and today's heavy-handed digital advertising often gets in the way. BuzzFeed is uniquely positioned to help brand's tell amazing consumer-first stories across their initiatives.
 
 75% of users come to BuzzFeed to find something to share, these are socially active, socially savvy people who are spending time consuming and sharing content, thus people who are very likely to spend time with your brand and share interesting content we publish together with their friends. ",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -1012,7 +1032,7 @@ g6_e7 = Event.create(name: "Reindeer Games | CAMA Holiday Social",
 The theme is Reindeer Games and we will be collecting games to be donated to the Ronald McDonald House.
 
 Your $10 cost of admission includes one drink and appetizers. Register here or through Eventbrite at https://camareindeergames.eventbrite.com",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -1029,7 +1049,7 @@ Program Agenda
 5:30 pm – 6:00 pm:   Networking 
 6:00 pm – 7:00 pm:   Presentation 
 7:00 pm – 7:30 pm:   Audience Q&A",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -1042,7 +1062,7 @@ g6_e9 = Event.create(name: "Google Glass Panel Discussion",
                      description: "Join the Charlotte American Marketing Association as we host a discussion about Google Glass and how it may impact the future of marketing. Learn what our panelist have done with their pair of Google Glass, how they were selected to receive a pair, interesting use cases they have seen with the device and what they have heard about the future of wearable technology.
 
 Already have questions for our panel members? Place it in the comments sections below so we can include it as part of our overall discussion.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -1057,7 +1077,7 @@ g7_e0 = Event.create(name: "Global Game Jam 2015",
                      description: "The Global Game Jam is taking place in Charlotte at UNCC
 
 http://globalgamejam.org/2015/jam-sites/university-north-carolina-charlotte",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -1070,7 +1090,7 @@ g7_e1 = Event.create(name: "Off the Rails",
                      description: "App designer Dan Russell-Pinson will present a case study of his most recent roller coaster game — Off the Rails.  He will discuss the basic approach he took to make the game including: simulating the vehicle’s physics (both on and off the track), dynamically building a 3D roller coaster track, optimizing the game for performance and building the basic 3D environment. Depending on the time available, he can dive into the Unity project and C# code and answer any specific questions the audience may have.
 
 Speaker: Dan Russell-Pinson is an independent game developer and the creator of several top 10 educational apps including Stack the States, Stack the Countries, Tower Math, Collider and Monster Physics. He studied Computer Science at Clemson University and combines his interests in programming, graphics, music and sound to create games that are both educational and fun.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -1081,7 +1101,7 @@ ends_at = end_time(starts_at)
 g7_e2 = Event.create(name: "Unity3D Starter Kit w/Universal Build",
                      group_id: g7.id,
                      description: "Show off the new starter kit. How it is built, how it works, ideas on how to take it further. Show off the Universal build that comes with the kit and review publishing and Universal Builds. ",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -1096,7 +1116,7 @@ g7_e3 = Event.create(name: "Project Spark and Kinect 2",
 Project Spark is an interesting game, or rather, simulation. 
 
 This isn't just because it allows you to create games, but also in the way it teaches programming principles. It does so in a visual way, with icons instead of actual code. That's not the only thing Project Spark does though. Users have the capability to upload their projects and let others rate their creations. They can even implement improvements on original creations, this is referred to as Remixes. While Project Spark isn't necessarily a game, it does offer something significantly different to anything else available at the moment.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -1115,7 +1135,7 @@ Corona Cards for Visual Studio allows Corona developers to deploy their current 
 Larry will show how easily it is to port a LUA app to windows 8 phone.
 
 Larry will also show how easy it is to add Native Windows 8 Ads to an App and how to extend communication between LUA and Native Windows 8 Phone API calls.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -1132,7 +1152,7 @@ g7_e5 = Event.create(name: "Share and Polish",
 Location: Microsoft Campus 
 
 Food Sponsor: Meridian Technologies",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -1151,7 +1171,7 @@ If you have no experience with Unity, no problem, we will walk you through the e
 This will be an all day event.  You will need to bring a laptop that has Unity 2D installed?  If you don't have the latest, we will try and have it on a thumb-drive so you can install it quickly.
 
 We will have a light breakfast and lunch provided as well.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -1164,7 +1184,7 @@ g7_e7 = Event.create(name: "Introduction to Construct 2 & more...",
                      description: "ummary: We are in for two great presentations!
 
 PRESENTATION - Creating Awesome Graphics for your Apps and Games with PowerPoint. Seriously! There are tons of graphics programs out there, some very expensive and complicated, some cheap and complicated, and some just worthless. One program almost every has access to is Microsoft Powerpoint. In this presentation you will learn how to easily make great graphics with PowerPoint and take advantage of the secret drawing features. PRESENTATION 2 - Introduction to Construct 2 Construct 2 is cross-platform game creation tool. It is extremely powerful, easy to learn, and constantly improving. This presentation will provide an introduction and demo of Construct 2. Steve has created all his Windows and Windows Phone apps with Construct 2.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -1175,7 +1195,7 @@ ends_at = end_time(starts_at)
 g7_e8 = Event.create(name: "Dev Ops and Release Management for Unity Games",
                      group_id: g7.id,
                      description: "Development Operations and Release Management for Unity Games will cover many of the challenging aspects of dealing with large binary assets that games have, version control, branching and merging strategies, building your release pipeline for various platforms, ensuring your proper development branches are well maintained, some theory behind that as well as how to use the agile project planning tools. This will all be done using TFS Online and Visual Studio Team Explorer.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
@@ -1190,7 +1210,7 @@ g7_e9 = Event.create(name: "Designing a Game - Concept to Polish",
 Portions of this talk are taken from Anna Anthropy's Level Design Lessons.
 
 Speaker:  Gregory Avery-Weir is a game designer with Future Proof Games. His Flash games have had millions of plays and Future Proof recently released their first retail downloadable title, Ossuary. They are currently working on their upcoming game, code named Zero Day.",
-                     address: fake_address,
+                     address: select_address,
                      starts_at: starts_at,
                      ends_at: ends_at
                      )
