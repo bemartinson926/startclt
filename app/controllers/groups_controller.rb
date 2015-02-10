@@ -52,7 +52,7 @@ class GroupsController < ApplicationController
   end
 
   def popular_groups
-    @groups = Group.all
+    @groups = Group.all.sort { |a,b| b.memberships.count <=> a.memberships.count }
   end
 
   # def index
