@@ -4,10 +4,11 @@
     <div class="container">
       <div class="page-content">
         <div>
+            <h1 class="rsvp-count"><%= @event.rsvps.count %> <%= "RSVP".pluralize(@event.rsvps.count) %>   
             <h1 class="dash-title group"><%= @event.name %></h1>
             <h2 class="org-name"><%= @event.group.name %></h2>
         </div>
-        
+
         <div class="divider"></div>
             <div class="row">
               <!--moved this to header-->
@@ -23,9 +24,9 @@
                   <p><%= @event.description %></p>
                 </div>
             </div><!--/row>-->
-              
+
             <hr />
-            
+
             <div class="row">
                 <div class="col-sm-2 col-xs-2">
                   <p class="event-info"><strong>Event Starts: </strong></p>
@@ -56,7 +57,7 @@
                   <p class="event-info"><%= @event.address %></p>
                 </div>
               </div><!--/row-->
-
+            
               <div class="col-sm-6 col-sm-offset-2">                
                 <p class="map">
                   <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}" %>
@@ -75,7 +76,11 @@
                 </div>
               </div><!--/row-->
             <% end %>
-
+            
+            <% if @event.in_past? %>
+              <h1 class="concluded pull-right">EVENT CONCLUDED</h1>
+            <% end %>
+            
             <div class="row">
               <div class="col-sm-10 col-sm-offset-2">
                 <% if current_user.organizer?(@event.group) %>

@@ -13,9 +13,26 @@
 	color:#6183A6;
 }
 
+.rsvp-count {
+  font-family:FjallaOne-Regular,"Helvetica Neue", Helvetica,Arial,sans-serif;
+  color: limegreen;
+  float: right;
+  margin-top: 25px;
+  font-size: 3em;
+}
+
 .map {
 	height:300px;
 	margin:25px 0px;
+}
+
+.concluded {
+  font-family:FjallaOne-Regular,"Helvetica Neue", Helvetica,Arial,sans-serif;
+  color: pink;
+  border: solid pink 5px;
+  // border-radius: 15%;
+  font-size: 3em;
+  transform: rotate(-25deg);
 }
 
 .event-name {
